@@ -27,7 +27,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/translized/translized-docs',
+            'https://github.com/translized/translized-docs/tree/master',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -48,7 +48,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'API/authentication',
+            docId: 'api/authentication',
             position: 'left',
             label: 'Docs',
           },
@@ -67,7 +67,7 @@ const config = {
             items: [
               {
                 label: 'Docs',
-                to: 'API/authentication',
+                to: 'docs/api/authentication',
               },
             ],
           },

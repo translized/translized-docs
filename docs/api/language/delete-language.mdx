@@ -1,27 +1,28 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Project Details
+# Delete language
 
-Returns specific project details.
+Deletes language from the project.
 
 Request type: <span style={{ color: '#167219' }}>_POST_</span>
 
 ### API Endpoint
 
 ```url
-https://translized.eu-4.evennode.com/project
+https://translized.eu-4.evennode.com/language/delete
 ```
 
 ### Parameters
 
-| Param     | Type   | Required | Description        |
-| --------- | ------ | -------- | ------------------ |
-| projectId | String | True     | Id of your project |
+| Params       | Type   | Required | Description                |
+| ------------ | ------ | -------- | -------------------------- |
+| projectId    | String | True     | Id of your project         |
+| languageCode | String | True     | Code of language to delete |
 
 ### Example requests
 
@@ -30,22 +31,25 @@ https://translized.eu-4.evennode.com/project
 
 ```curl
 curl -X POST -H "Content-Type: application/json" \
--H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
--d "{"projectId": "A3KJtLw4mt"}" \
-https://translized.eu-4.evennode.com/project
+     -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
+     -d "{"projectId":"A3KJtLw4mt", "languageCode":"az"}" \
+     https://translized.eu-4.evennode.com/language/delete
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://translized.eu-4.evennode.com/project', {
+fetch('https://translized.eu-4.evennode.com/language/delete', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
     'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
   },
-  body: JSON.stringify({ projectId: 'A3KJtLw4mt' }),
+  body: JSON.stringify({
+    projectId: 'A3KJtLw4mt',
+    languageCode: 'az',
+  }),
 })
   .then((res) => res.json())
   .then((data) => console.log(data))
@@ -57,15 +61,10 @@ fetch('https://translized.eu-4.evennode.com/project', {
 
 ```js
 const response = await axios.post(
-  'https://translized.eu-4.evennode.com/project',
+  'https://translized.eu-4.evennode.com/language/delete',
   {
     projectId: 'A3KJtLw4mt',
-  },
-  {
-    headers: {
-      'Content-Type': 'application/json',
-      'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
-    },
+    languageCode: 'az',
   }
 );
 const data = response.result;
@@ -77,19 +76,18 @@ const data = response.result;
 :::info
 
 - **projectId** can be found inside your project's **_settings_**. (Translized App > Your Project > Settings )
+- List of all supported **languageCode** values can be found [TODO](#).
 
 :::
 
 ### Example response
 
+TODO: return created language object
+
 ```js
 {
   "result": {
-    "id": "A3KJtLw4ms",
-    "name": "Translized",
-    "createdAt": "2021-08-30T12:26:36.295Z",
-    "primaryLanguage": "en",
-    "terms": 586
+    "success": true
   }
 }
 ```

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 :root {
   --ifm-color-primary: #2F92FF;
   --ifm-color-primary-dark: #2675cc;
@@ -6,6 +8,7 @@
   --ifm-color-primary-light: #59a8ff;
   --ifm-color-primary-lighter: #82beff;
   --ifm-color-primary-lightest: #acd3ff;
+  --ifm-code-font-size: 90%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -17,7 +20,35 @@ html[data-theme='dark'] {
   --ifm-color-primary-light: #59a8ff;
   --ifm-color-primary-lighter: #82beff;
   --ifm-color-primary-lightest: #acd3ff;
+  --ifm-code-font-size: 90%;
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', sans-serif;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: bold !important;
 }
 
 .main-wrapper {

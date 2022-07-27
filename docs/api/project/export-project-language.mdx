@@ -1,0 +1,95 @@
+---
+sidebar_position: 4
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Export Project Language
+
+Exports project language.
+
+Request type: <span style={{ color: '#167219' }}>_POST_</span>
+
+### API Endpoint
+
+```url
+https://translized.eu-4.evennode.com/project/export
+```
+
+### Parameters
+
+| Params       | Type   | Required | Description                |
+| ------------ | ------ | -------- | -------------------------- |
+| projectId    | String | True     | Id of your project         |
+| exportFormat | String | True     | Format of file for export  |
+| languageCode | String | True     | Code of language to export |
+
+### Example requests
+
+<Tabs className="api-tabs">
+<TabItem value="cURL" label="cURL">
+
+```curl
+curl -X POST -H "Content-Type: application/json" \
+     -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
+     -d "{"projectId":"A3KJtLw4mt", "exportFormat":"json", "languageCode":"en"}" \
+     https://translized.eu-4.evennode.com/project/export
+```
+
+</TabItem>
+<TabItem value="js-fetch" label="Javascript Fetch">
+
+```js
+fetch('https://translized.eu-4.evennode.com/project/export', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
+  },
+  body: JSON.stringify({
+    projectId: 'A3KJtLw4mt',
+    exportFormat: 'json',
+    languageCode: 'en',
+  }),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error(error));
+```
+
+</TabItem>
+<TabItem value="js-axios" label="Javascript Axios">
+
+```js
+const response = await axios.post(
+  'https://translized.eu-4.evennode.com/project/export',
+  {
+    projectId: 'A3KJtLw4mt',
+    exportFormat: 'json',
+    languageCode: 'en',
+  }
+);
+const data = response.result;
+```
+
+</TabItem>
+</Tabs>
+
+:::info
+
+- **projectId** can be found inside your project's **_settings_**. (Translized App > Your Project > Settings )
+- List of all supported **languageCode** values can be found [TODO](#).
+- Supported **exportFormat** values can be found [TODO](#)
+
+:::
+
+### Example response
+
+```js
+{
+  "result": {
+    "fileURL": "https://api.translized.com/TDqgTeyz43Zg9181cdq9kEExL9dzJwTWXD8WjlOK/dad04a1a3910b43d54260b02f4e229c3_exportFile.json"
+  }
+}
+```

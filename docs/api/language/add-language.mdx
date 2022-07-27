@@ -5,24 +5,24 @@ sidebar_position: 3
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add Project
+# Add Language
 
-Creates new project.
+Adds new language to the project.
 
 Request type: <span style={{ color: '#167219' }}>_POST_</span>
 
 ### API Endpoint
 
 ```url
-https://translized.eu-4.evennode.com/project/add
+https://translized.eu-4.evennode.com/language/add
 ```
 
 ### Parameters
 
-| Param        | Type   | Required | Description           |
-| ------------ | ------ | -------- | --------------------- |
-| projectName  | String | True     | Name of project       |
-| languageCode | String | True     | Primary language code |
+| Params       | Type   | Required | Description             |
+| ------------ | ------ | -------- | ----------------------- |
+| projectId    | String | True     | Id of your project      |
+| languageCode | String | True     | Code of language to add |
 
 ### Example requests
 
@@ -32,23 +32,23 @@ https://translized.eu-4.evennode.com/project/add
 ```curl
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
-     -d "{"projectName":"Translized", "languageCode":"en"}" \
-     https://translized.eu-4.evennode.com/project/add
+     -d "{"projectId":"A3KJtLw4mt", "languageCode":"az"}" \
+     https://translized.eu-4.evennode.com/language/add
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://translized.eu-4.evennode.com/project/add', {
+fetch('https://translized.eu-4.evennode.com/language/add', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
     'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
   },
   body: JSON.stringify({
-    projectName: 'Translized',
-    languageCode: 'en',
+    projectId: 'A3KJtLw4mt',
+    languageCode: 'az',
   }),
 })
   .then((response) => response.json())
@@ -61,16 +61,10 @@ fetch('https://translized.eu-4.evennode.com/project/add', {
 
 ```js
 const response = await axios.post(
-  'https://translized.eu-4.evennode.com/project/add',
+  'https://translized.eu-4.evennode.com/language/add',
   {
-    projectName: 'Translized',
-    languageCode: 'en',
-  },
-  {
-    headers: {
-      'Content-Type': 'application/json',
-      'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
-    },
+    projectId: 'A3KJtLw4mt',
+    languageCode: 'az',
   }
 );
 const data = response.result;
@@ -81,18 +75,19 @@ const data = response.result;
 
 :::info
 
+- **projectId** can be found inside your project's **_settings_**. (Translized App > Your Project > Settings )
 - List of all supported **languageCode** values can be found [TODO](#).
 
 :::
 
 ### Example response
 
+TODO: return created language object
+
 ```js
 {
   "result": {
-    "id": "wJKaNayBDM",
-    "name": "Translized",
-    "createdAt": "2021-09-08T13:26:23.668Z"
+    "success": true
   }
 }
 ```
