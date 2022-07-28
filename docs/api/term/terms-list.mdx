@@ -1,20 +1,20 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Project languages
+# Terms List
 
-Returns all project languages and languages statistics.
+Returns list of all terms in project.
 
 Request type: <span style={{ color: '#167219' }}>_POST_</span>
 
 ### API Endpoint
 
 ```url
-https://translized.eu-4.evennode.com/language/list
+https://translized.eu-4.evennode.com/term/list
 ```
 
 ### Parameters
@@ -32,14 +32,14 @@ https://translized.eu-4.evennode.com/language/list
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
      -d "{"projectId":"A3KJtLw4mt"}" \
-     https://translized.eu-4.evennode.com/language/list
+     https://translized.eu-4.evennode.com/term/list
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://translized.eu-4.evennode.com/language/list', {
+fetch('https://translized.eu-4.evennode.com/term/list', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -49,17 +49,17 @@ fetch('https://translized.eu-4.evennode.com/language/list', {
     projectId: 'A3KJtLw4mt',
   }),
 })
-  .then((response) => response.json())
+  .then((res) => res.json())
   .then((data) => console.log(data))
-  .catch((error) => console.error(error));
+  .catch((err) => console.log(err));
 ```
 
-</TabItem>
-<TabItem value="js-axios" label="Javascript Axios">
+  </TabItem>
+  <TabItem value="js-axios" label="Javascript Axios">
 
 ```js
 const response = await axios.post(
-  'https://translized.eu-4.evennode.com/language/list',
+  'https://translized.eu-4.evennode.com/term/list',
   {
     projectId: 'A3KJtLw4mt',
   }
@@ -67,7 +67,7 @@ const response = await axios.post(
 const data = response.result;
 ```
 
-</TabItem>
+  </TabItem>
 </Tabs>
 
 :::info
@@ -80,21 +80,11 @@ const data = response.result;
 
 ```js
 {
-  "result": {
-    "languages": [
-      {
-        "code": "en",
-        "label": "English",
-        "translated": 271,
-        "percentage": 100
-      },
-      {
-        "code": "sr",
-        "label": "Serbian",
-        "translated": 44,
-        "percentage": 16.2
-      }
-    ]
-  }
+  "result": [
+    "Registration.title",
+    "Registration.acceptTerms",
+    "Registration.and",
+    "Registration.terms"
+  ]
 }
 ```

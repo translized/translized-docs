@@ -17,6 +17,10 @@ Request type: <span style={{ color: '#167219' }}>_POST_</span>
 https://translized.eu-4.evennode.com/project/list
 ```
 
+### Parameters
+
+None
+
 ### Example requests
 
 <Tabs className="api-tabs">
@@ -58,6 +62,22 @@ const response = await axios.post(
   }
 );
 const data = response.result;
+```
+
+  </TabItem>
+  <TabItem value="kotlin-android" label="Kotlin">
+
+```c
+  val response = client.post<ProjectListResponse>("/project/list")
+  val data = response.result
+```
+
+  </TabItem>
+  <TabItem value="swift-ios" label="Swift">
+
+```c
+  let response = client.post("/project/list")
+  let data = response.result
 ```
 
   </TabItem>
