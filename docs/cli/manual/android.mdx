@@ -1,0 +1,26 @@
+---
+sidebar_position: 2
+---
+
+# Android
+
+You can download desired files from: <https://github.com/translized/translized-cli>
+
+1. Download translate.rb for Android and put it to root folder of you project.
+2. Open Terminal and navigate to root folder of your project.
+3. Run command:
+
+```shell
+ruby translate.rb [projectId] [api-token] [destination]
+```
+
+:::info
+
+- **projectId** is ID of your project and can be found inside your project's **_settings_**. (Translized App > Your Project > Settings)
+- **api-token** is your API token (user/account bound) and can be found inside your **_API settings_**. (Translized App > Account > API Settings)
+- **destination** is path to the folder where files will be downloaded. Files will be in **value-{locale}** folders as per Android preferences.
+  - Examples:
+    - Primary language: _/{destination}/values/strings.xml_
+    - others: _/{destination}/values-de/strings.xml_
+
+:::

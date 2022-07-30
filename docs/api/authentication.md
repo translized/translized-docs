@@ -4,6 +4,22 @@ sidebar_position: 1
 
 # Authentication
 
-All requests to the API must contain the header **api-token**. You can get this token from your Translized account. You'll find it in **Account Settings > API Access**.
+### API Token
 
-Most of requests require **projectId parameter**. You can find it in your Translized account in **Project Settings**.
+All requests to the API must contain the header **api-token**.
+
+:::info
+
+- **api-token** is can be found inside your **_API settings_**. (Translized App > Account > API Settings)
+
+:::
+
+### Project ID
+
+Most of requests require **projectId** parameter.
+
+:::info
+
+- **projectId** can be found inside your project's **_settings_**. (Translized App > Your Project > Settings)
+
+:::

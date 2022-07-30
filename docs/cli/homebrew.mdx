@@ -1,0 +1,41 @@
+---
+sidebar_position: 1
+---
+
+# Homebrew
+
+Follow next steps to download and import localization files to your project.
+Before start make sure you have **projectId** and **api-token**, which you can find in Project Statistics and Account/API Access.
+
+To install translized-cli via Brew, simply use:
+
+```shell
+brew tap translized/translized
+brew install translized-cli
+```
+
+### Usage
+
+1. Open Terminal and navigate to root folder of your project.
+
+   ```shell
+   cd /path/to/project
+   ```
+
+2. Initialize your project by executing the `init` command. This lets you define your preferred locale file format, download, upload files and more.
+
+   ```shell
+   translized init
+   ```
+
+3. Use the upload command to `upload` your locale file from your defined sources:
+
+   ```shell
+   translized upload
+   ```
+
+4. Use the download command to `download` the most recent locale files back into your project:
+
+   ```shell
+   translized download
+   ```

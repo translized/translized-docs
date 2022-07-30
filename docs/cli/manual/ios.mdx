@@ -1,0 +1,23 @@
+---
+sidebar_position: 1
+---
+
+# iOS
+
+You can download desired files from: <https://github.com/translized/translized-cli>
+
+1. Download translate.rb for iOS and put it to root folder of you project.
+2. Open Terminal and navigate to root folder of your project.
+3. Run command:
+
+```shell
+ruby translate.rb [projectId] [api-token] [destination]
+```
+
+:::info
+
+- **projectId** is ID of your project and can be found inside your project's **_settings_**. (Translized App > Your Project > Settings)
+- **api-token** is your API token (user/account bound) and can be found inside your **_API settings_**. (Translized App > Account > API Settings)
+- **destination** is path to the folder where files will be downloaded. Files will be in **{locale}.lproj** folders as per iOS preferences. (e.g: _./{destination}/en.lproj/Localized.strings_)
+
+:::
