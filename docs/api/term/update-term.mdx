@@ -1,0 +1,97 @@
+---
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Update Term
+
+Updates Term.
+
+Request type: <span style={{ color: '#167219' }}>_POST_</span>
+
+### API Endpoint
+
+```url
+https://translized.eu-4.evennode.com/term/update
+```
+
+### Parameters
+
+| Param        | Type   | Required | Description                                                          |
+| ------------ | ------ | -------- | -------------------------------------------------------------------- |
+| projectId    | String | True     | Id of your project                                                   |
+| termKey      | String | True     | Key of term to update                                                |
+| translation  | String | False    | Translation. If defined languageCode is required                     |
+| languageCode | String | False    | Code of language for translation. If defined translation is required |
+| context      | String | False    | Context of term                                                      |
+
+### Example requests
+
+<Tabs className="api-tabs">
+<TabItem value="cURL" label="cURL">
+
+```curl
+curl -X POST -H "Content-Type: application/json" \
+     -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
+     -d "{"projectId":"A3KJtLw4mt", "termKey":"Api.test", "context":"test"}" \
+     https://translized.eu-4.evennode.com/term/update
+```
+
+</TabItem>
+<TabItem value="js-fetch" label="Javascript Fetch">
+
+```js
+fetch('https://translized.eu-4.evennode.com/term/update', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
+  },
+  body: JSON.stringify({
+    projectId: 'A3KJtLw4mt',
+    termKey: 'Api.test',
+    context: 'test',
+  }),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error(error));
+```
+
+  </TabItem>
+  <TabItem value="js-axios" label="Javascript Axios">
+
+```js
+const response = await axios.post(
+  'https://translized.eu-4.evennode.com/term/update',
+  {
+    projectId: 'A3KJtLw4mt',
+    termKey: 'Api.test',
+    context: 'test',
+  }
+);
+const data = response.result;
+```
+
+  </TabItem>
+</Tabs>
+
+:::info
+
+- **projectId** can be found inside your project's **_settings_**. (Translized App > Your Project > Settings )
+- List of all supported **languageCode** values can be found [TODO](#).
+- Term **context** is not required but it is good way to describe where or how term will be used.
+
+:::
+
+### Example response
+
+```js
+{
+  "result": {
+    "success": true
+  }
+}
+```

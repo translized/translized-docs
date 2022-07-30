@@ -1,0 +1,103 @@
+---
+sidebar_position: 1
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Project List
+
+Returns user projects.
+
+Request type: <span style={{ color: '#167219' }}>_POST_</span>
+
+### API Endpoint
+
+```url
+https://translized.eu-4.evennode.com/project/list
+```
+
+### Parameters
+
+None
+
+### Example requests
+
+<Tabs className="api-tabs">
+<TabItem value="cURL" label="cURL">
+
+```curl
+curl -X POST -H "Content-Type: application/json" \
+     -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
+     https://translized.eu-4.evennode.com/project/list
+```
+
+</TabItem>
+<TabItem value="js-fetch" label="Javascript Fetch">
+
+```js
+fetch('https://translized.eu-4.evennode.com/project/list', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
+  },
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error(error));
+```
+
+  </TabItem>
+  <TabItem value="js-axios" label="Javascript Axios">
+
+```js
+const response = await axios.post(
+  'https://translized.eu-4.evennode.com/project/list',
+  {
+    headers: {
+      'Content-Type': 'application/json',
+      'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
+    },
+  }
+);
+const data = response.result;
+```
+
+  </TabItem>
+  <TabItem value="kotlin-android" label="Kotlin">
+
+```c
+  val response = client.post<ProjectListResponse>("/project/list")
+  val data = response.result
+```
+
+  </TabItem>
+  <TabItem value="swift-ios" label="Swift">
+
+```c
+  let response = client.post("/project/list")
+  let data = response.result
+```
+
+  </TabItem>
+</Tabs>
+
+### Example response
+
+```js
+{
+  "result": [
+    {
+      "id": "A3KJtLw4as",
+      "name": "Translized",
+      "createdAt": "2021-08-30T12:26:36.295Z"
+    },
+    {
+      "id": "L43AkT4ms",
+      "name": "Acme",
+      "createdAt": "2021-08-30T12:26:36.295Z"
+    }
+  ]
+}
+```

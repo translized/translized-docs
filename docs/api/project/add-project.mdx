@@ -1,0 +1,98 @@
+---
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Add Project
+
+Creates new project.
+
+Request type: <span style={{ color: '#167219' }}>_POST_</span>
+
+### API Endpoint
+
+```url
+https://translized.eu-4.evennode.com/project/add
+```
+
+### Parameters
+
+| Param        | Type   | Required | Description           |
+| ------------ | ------ | -------- | --------------------- |
+| projectName  | String | True     | Name of project       |
+| languageCode | String | True     | Primary language code |
+
+### Example requests
+
+<Tabs className="api-tabs">
+<TabItem value="cURL" label="cURL">
+
+```curl
+curl -X POST -H "Content-Type: application/json" \
+     -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
+     -d "{"projectName":"Translized", "languageCode":"en"}" \
+     https://translized.eu-4.evennode.com/project/add
+```
+
+</TabItem>
+<TabItem value="js-fetch" label="Javascript Fetch">
+
+```js
+fetch('https://translized.eu-4.evennode.com/project/add', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
+  },
+  body: JSON.stringify({
+    projectName: 'Translized',
+    languageCode: 'en',
+  }),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error(error));
+```
+
+</TabItem>
+<TabItem value="js-axios" label="Javascript Axios">
+
+```js
+const response = await axios.post(
+  'https://translized.eu-4.evennode.com/project/add',
+  {
+    projectName: 'Translized',
+    languageCode: 'en',
+  },
+  {
+    headers: {
+      'Content-Type': 'application/json',
+      'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
+    },
+  }
+);
+const data = response.result;
+```
+
+</TabItem>
+</Tabs>
+
+:::info
+
+- List of all supported **languageCode** values can be found [TODO](#).
+
+:::
+
+### Example response
+
+```js
+{
+  "result": {
+    "id": "wJKaNayBDM",
+    "name": "Translized",
+    "createdAt": "2021-09-08T13:26:23.668Z"
+  }
+}
+```

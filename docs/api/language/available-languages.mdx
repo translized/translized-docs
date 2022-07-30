@@ -1,0 +1,101 @@
+---
+sidebar_position: 1
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Available languages
+
+TODO:
+
+Returns list of all available languages.
+
+Request type: <span style={{ color: '#167219' }}>_POST_</span>
+
+### API Endpoint
+
+```url
+https://translized.eu-4.evennode.com/language/available
+```
+
+### Parameters
+
+None
+
+### Example requests
+
+<Tabs className="api-tabs">
+<TabItem value="cURL" label="cURL">
+
+```curl
+curl -X POST -H "Content-Type: application/json" \
+     -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
+     https://translized.eu-4.evennode.com/language/available
+```
+
+</TabItem>
+<TabItem value="js-fetch" label="Javascript Fetch">
+
+```js
+fetch('https://translized.eu-4.evennode.com/language/available', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
+  },
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error(error));
+```
+
+</TabItem>
+<TabItem value="js-axios" label="Javascript Axios">
+
+```js
+const response = await axios.post(
+  'https://translized.eu-4.evennode.com/language/available',
+  {
+    headers: {
+      'Content-Type': 'application/json',
+      'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
+    },
+  }
+);
+const data = response.result;
+```
+
+</TabItem>
+</Tabs>
+
+:::info
+
+- TODO:
+
+:::
+
+### Example response
+
+```js
+{
+  "result": [
+    {
+      "code": "hy",
+      "label": "Armenian"
+    },
+    {
+      "code": "az",
+      "label": "Azerbaijani"
+    },
+    {
+      "code": "be",
+      "label": "Belarusian"
+    },
+    {
+      "code": "zh",
+      "label": "Chinese"
+    }
+  ]
+}
+```

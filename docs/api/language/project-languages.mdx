@@ -1,0 +1,100 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Project languages
+
+Returns all project languages and languages statistics.
+
+Request type: <span style={{ color: '#167219' }}>_POST_</span>
+
+### API Endpoint
+
+```url
+https://translized.eu-4.evennode.com/language/list
+```
+
+### Parameters
+
+| Param     | Type   | Required | Description        |
+| --------- | ------ | -------- | ------------------ |
+| projectId | String | True     | Id of your project |
+
+### Example requests
+
+<Tabs className="api-tabs">
+<TabItem value="cURL" label="cURL">
+
+```curl
+curl -X POST -H "Content-Type: application/json" \
+     -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
+     -d "{"projectId":"A3KJtLw4mt"}" \
+     https://translized.eu-4.evennode.com/language/list
+```
+
+</TabItem>
+<TabItem value="js-fetch" label="Javascript Fetch">
+
+```js
+fetch('https://translized.eu-4.evennode.com/language/list', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
+  },
+  body: JSON.stringify({
+    projectId: 'A3KJtLw4mt',
+  }),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error(error));
+```
+
+</TabItem>
+<TabItem value="js-axios" label="Javascript Axios">
+
+```js
+const response = await axios.post(
+  'https://translized.eu-4.evennode.com/language/list',
+  {
+    projectId: 'A3KJtLw4mt',
+  }
+);
+const data = response.result;
+```
+
+</TabItem>
+</Tabs>
+
+:::info
+
+- **projectId** can be found inside your project's **_settings_**. (Translized App > Your Project > Settings )
+
+:::
+
+### Example response
+
+```js
+{
+  "result": {
+    "languages": [
+      {
+        "code": "en",
+        "label": "English",
+        "translated": 271,
+        "percentage": 100
+      },
+      {
+        "code": "sr",
+        "label": "Serbian",
+        "translated": 44,
+        "percentage": 16.2
+      }
+    ]
+  }
+}
+```
