@@ -48,9 +48,15 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'api/authentication',
+            docId: 'getting-started',
             position: 'left',
             label: 'Docs',
+          },
+          {
+            type: 'doc',
+            docId: 'features/overview',
+            position: 'left',
+            label: 'Features',
           },
           {
             href: 'https://github.com/facebook/docusaurus',
@@ -66,7 +72,11 @@ const config = {
             items: [
               {
                 label: 'Docs',
-                to: 'docs/api/authentication',
+                to: 'docs/getting-started',
+              },
+              {
+                label: 'Features',
+                to: 'docs/features/overview',
               },
             ],
           },
