@@ -11,6 +11,9 @@
   --ifm-code-font-size: 90%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-footer-background-color: #111527;
+  --aa-font-family: 'Lato', sans-serif !important;
+  --aa-primary-color-rgb: rgb(47, 146, 255) !important;
+  --aa-input-background-color-rgb: rgb(47, 146, 255) !important;
 }
 
 html[data-theme='dark'] {
@@ -24,7 +27,10 @@ html[data-theme='dark'] {
   --ifm-code-font-size: 90%;
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
   --ifm-footer-background-color: #242526;
-}
+  --aa-font-family: 'Lato', sans-serif !important;
+  --aa-primary-color-rgb: rgb(89, 168, 255) !important;
+  --aa-input-background-color-rgb: rgb(89, 168, 255) !important;
+} 
 
 html,
 body {

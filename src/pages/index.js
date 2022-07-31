@@ -30,25 +30,25 @@ const Home = () => {
           <div className={styles.gridButtonsWrapper}>
             <Link
               className="button button--outline button--primary button--lg hero-button"
-              to={useBaseUrl('docs/category/api')}
+              to={useBaseUrl('docs/api/authentication')}
             >
               API
             </Link>
             <Link
               className="button button--outline button--primary button--lg hero-button"
-              to={useBaseUrl('docs/category/cli')}
+              to={useBaseUrl('docs/cli/homebrew')}
             >
               CLI
             </Link>
             <Link
               className="button button--outline button--primary button--lg hero-button"
-              to={useBaseUrl('docs/category/sdk')}
+              to={useBaseUrl('docs/sdk/ios')}
             >
               SDK
             </Link>
             <Link
               className="button button--outline button--primary button--lg hero-button"
-              to={useBaseUrl('docs/category/features')}
+              to={useBaseUrl('docs/features/overview')}
             >
               Features
             </Link>

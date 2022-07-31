@@ -97,6 +97,13 @@ const sidebars = {
   ],
   translizedFeatures: [
     'features/overview',
+    'features/continuous-localization-automations',
+    'features/machine-translations',
+    'features/human-translations',
+    'features/translation-history',
+    'features/translation-memory',
+    'features/screenshots',
+    'features/over-the-air',
   ]
 };
 
