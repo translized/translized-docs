@@ -104,3 +104,7 @@ h6 {
   border: 2px solid var(--ifm-color-primary-dark);
   color: #FFFFFF !important;
 }
+
+.footer__title {
+  color: #FFFFFF;
+}
