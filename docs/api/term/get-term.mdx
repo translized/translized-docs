@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 tags:
   - api
   - term
@@ -8,7 +8,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add Term
+# Get Term
 
 Adds term to project.
 
@@ -17,7 +17,7 @@ Request type: <span style={{ color: '#167219' }}>_POST_</span>
 ### API Endpoint
 
 ```url
-https://api.translized.com/term/add
+https://api.translized.com/term/get
 ```
 
 ### Parameters
@@ -26,7 +26,7 @@ https://api.translized.com/term/add
 | --------- | ------ | -------- | ------------------ |
 | projectId | String | True     | Id of your project |
 | termKey   | String | True     | Key of term to add |
-| context   | String | False    | Context of term    |
+| languageCode | String | False    | Language code. If defined translation will be returned only for that language. If not defined all term translations are returned. |
 
 ### Example requests
 
@@ -37,14 +37,14 @@ https://api.translized.com/term/add
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
      -d "{"projectId":"A3KJtLw4mt", "termKey":"Api.test"}" \
-     https://api.translized.com/term/add
+     https://api.translized.com/term/get
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://api.translized.com/term/add', {
+fetch('https://api.translized.com/term/get', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ fetch('https://api.translized.com/term/add', {
 
 ```js
 const response = await axios.post(
-  'https://api.translized.com/term/add',
+  'https://api.translized.com/term/get',
   {
     projectId: 'A3KJtLw4mt',
     termKey: 'Api.test',
@@ -88,11 +88,20 @@ const data = response.result;
 ```js
 {
   "result": {
-    "objectId": "oNN342JCu0",
-    "projectId": "A3KJtLw4mt",
+    "objectId": "DxBKTxakAO",
     "key": "Api.test",
-    "value": [],
-    "createdAt": "2021-09-08T14:02:44.495Z"
+    "projectId": "A3KJtLw4mt",
+    "value": [
+      {
+        "code": "en",
+        "translation": "Api test (en)"
+      },
+      {
+        "code": "es",
+        "translation": "Api test (es)"
+      }
+    ],
+    "createdAt": "2022-08-03T18:18:13.098Z"
   }
 }
 ```

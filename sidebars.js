@@ -62,6 +62,7 @@ const sidebars = {
           collapsed: true,
           items: [
             'api/term/terms-list',
+            'api/term/get-term',
             'api/term/add-term',
             'api/term/update-term',
             'api/term/delete-term',
