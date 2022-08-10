@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Translized Documentation',
-  tagline: 'Reach audiences worldwide with an easy-to-use software localization platform that ensures high quality translation and timely communication.',
+  tagline: 'Official Translized Documentation',
   url: 'https://docs.translized.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
