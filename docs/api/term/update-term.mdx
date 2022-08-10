@@ -38,7 +38,7 @@ https://api.translized.com/term/update
 ```curl
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
-     -d "{"projectId":"A3KJtLw4mt", "termKey":"Api.test", "context":"test"}" \
+     -d "{"projectId":"A3KJtLw4mt", "termKey":"Api.test", "translation":"API TEST", "languageCode": "en"}" \
      https://api.translized.com/term/update
 ```
 
@@ -55,7 +55,8 @@ fetch('https://api.translized.com/term/update', {
   body: JSON.stringify({
     projectId: 'A3KJtLw4mt',
     termKey: 'Api.test',
-    context: 'test',
+    translation:"API TEST", 
+    languageCode: "en"
   }),
 })
   .then((response) => response.json())
@@ -72,7 +73,8 @@ const response = await axios.post(
   {
     projectId: 'A3KJtLw4mt',
     termKey: 'Api.test',
-    context: 'test',
+    translation:"API TEST", 
+    languageCode: "en"
   }
 );
 const data = response.result;
@@ -94,7 +96,21 @@ const data = response.result;
 ```js
 {
   "result": {
-    "success": true
+    "key": "Api.test",
+    "value": [
+      {
+        "code": "en",
+        "translation": "API TEST"
+      }
+      {
+        "code": "de",
+        "translation": "Anmelden 1"
+      },
+      {
+        "code": "fr",
+        "translation": "S'inscrire"
+      }
+    ]
   }
 }
 ```

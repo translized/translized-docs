@@ -35,7 +35,7 @@ https://api.translized.com/language/add
 ```curl
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
-     -d "{"projectId":"A3KJtLw4mt", "languageCode":"az"}" \
+     -d "{"projectId":"A3KJtLw4mt", "languageCode":"de"}" \
      https://api.translized.com/language/add
 ```
 
@@ -51,7 +51,7 @@ fetch('https://api.translized.com/language/add', {
   },
   body: JSON.stringify({
     projectId: 'A3KJtLw4mt',
-    languageCode: 'az',
+    languageCode: 'de',
   }),
 })
   .then((response) => response.json())
@@ -67,7 +67,7 @@ const response = await axios.post(
   'https://api.translized.com/language/add',
   {
     projectId: 'A3KJtLw4mt',
-    languageCode: 'az',
+    languageCode: 'de',
   }
 );
 const data = response.result;
@@ -90,7 +90,8 @@ TODO: return created language object
 ```js
 {
   "result": {
-    "success": true
+    "code": "de",
+    "label": "German"
   }
 }
 ```

@@ -22,10 +22,13 @@ https://api.translized.com/project/exportAll
 
 ### Parameters
 
-| Param        | Type   | Required | Description               |
-| ------------ | ------ | -------- | ------------------------- |
-| projectId    | String | True     | Id of your project        |
-| exportFormat | String | True     | Format of file for export |
+| Param                               | Type    | Required | Description               |
+| ----------------------------------- | ------- | -------- | ------------------------- |
+| projectId                           | String  | True     | Id of your project        |
+| exportFormat                        | String  | True     | Format of file for export |
+| replaceEmptyWithPrimaryTranslations | Boolean | False    | Replace empty translations with primary translations  |
+| replaceEmptyWithPseudolocalization  | Object  | False    | Replace empty translations with pseudolocalized primary translations. 'increasePercentage' parameter in Object sets the length of pseudolocalized string (example: "replaceEmptyWithPseudolocalization":{"increasePercentage": 83} ) |
+| transformPlaceholdersiOSAndroid     | Boolean | False    | Replace all placeholders with native ones. Use this parameter when you have one Translized project for both iOS and android.   |
 
 ### Example requests
 
