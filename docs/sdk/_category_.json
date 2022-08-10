@@ -3,6 +3,6 @@
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "You don't need to release new versions of your application to respective platforms in order to get new translations or some text changes. With our SDK, just create release on Translized dashboard and watch as new translations or text appears in your application."
+    "description": "Translized SDK"
   }
 }

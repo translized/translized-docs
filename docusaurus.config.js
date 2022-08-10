@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Translized Documentation',
-  tagline: 'Reach audiences worldwide with an easy-to-use software localization platform that ensures high quality translation and timely communication.',
+  tagline: 'Official Translized Documentation',
   url: 'https://docs.translized.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -39,10 +39,18 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      announcementBar: {
+        id: 'annoucment_bar_alpha',
+      content:
+        'Translized Docs v2 are currently under development. Some things might be incomplete, missing or might change. ⚙️',
+      backgroundColor: '#2675cc',
+      textColor: '#fff',
+      isCloseable: false,
+      },
       navbar: {
         title: 'Translized',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Translized Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -59,7 +67,7 @@ const config = {
             label: 'Features',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/translized',
             label: 'GitHub',
             position: 'right',
           },
