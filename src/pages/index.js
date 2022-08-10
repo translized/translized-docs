@@ -22,7 +22,6 @@ const Home = () => {
             src={useBaseUrl('img/logo.svg')}
           />
           <h1 className="hero__title">Translized Documentation</h1>
-          {/* Create paragraph with lorem ipsum text */}
           <p className="hero__subtitle">
             Learn more about documentation, better understand Translized features and get started guides for localizing your products.
           </p>

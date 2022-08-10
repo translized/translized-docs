@@ -50,7 +50,7 @@ const config = {
       navbar: {
         title: 'Translized',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Translized Logo',
           src: 'img/logo.svg',
         },
         items: [
