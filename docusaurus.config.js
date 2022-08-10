@@ -39,6 +39,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      announcementBar: {
+        id: 'annoucment_bar_alpha',
+      content:
+        'Translized Docs v2 are currently under development. Some things might be incomplete, missing or might change. ⚙️',
+      backgroundColor: '#2675cc',
+      textColor: '#fff',
+      isCloseable: false,
+      },
       navbar: {
         title: 'Translized',
         logo: {
@@ -59,7 +67,7 @@ const config = {
             label: 'Features',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/translized',
             label: 'GitHub',
             position: 'right',
           },

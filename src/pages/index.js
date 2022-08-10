@@ -24,7 +24,7 @@ const Home = () => {
           <h1 className="hero__title">Translized Documentation</h1>
           {/* Create paragraph with lorem ipsum text */}
           <p className="hero__subtitle">
-            Reach audiences worldwide with an easy-to-use software localization platform that ensures high quality translation and timely communication.
+            Learn more about documentation, better understand Translized features and get started guides for localizing your products.
           </p>
 
           <div className={styles.gridButtonsWrapper}>

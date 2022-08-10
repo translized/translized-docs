@@ -14,6 +14,7 @@
   --aa-font-family: 'Lato', sans-serif !important;
   --aa-primary-color-rgb: rgb(47, 146, 255) !important;
   --aa-input-background-color-rgb: rgb(47, 146, 255) !important;
+  --docusaurus-announcement-bar-height: auto !important;
 }
 
 html[data-theme='dark'] {
@@ -30,6 +31,7 @@ html[data-theme='dark'] {
   --aa-font-family: 'Lato', sans-serif !important;
   --aa-primary-color-rgb: rgb(89, 168, 255) !important;
   --aa-input-background-color-rgb: rgb(89, 168, 255) !important;
+  --docusaurus-announcement-bar-height: auto !important;
 } 
 
 html,
@@ -107,4 +109,10 @@ h6 {
 
 .footer__title {
   color: #FFFFFF;
+}
+
+div[class^='announcementBarContent'] {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 24px;
 }
