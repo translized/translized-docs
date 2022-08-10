@@ -17,7 +17,7 @@ Request type: <span style={{ color: '#167219' }}>_POST_</span>
 ### API Endpoint
 
 ```url
-https://translized.eu-4.evennode.com/term/update
+https://api.translized.com/term/update
 ```
 
 ### Parameters
@@ -39,14 +39,14 @@ https://translized.eu-4.evennode.com/term/update
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
      -d "{"projectId":"A3KJtLw4mt", "termKey":"Api.test", "context":"test"}" \
-     https://translized.eu-4.evennode.com/term/update
+     https://api.translized.com/term/update
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://translized.eu-4.evennode.com/term/update', {
+fetch('https://api.translized.com/term/update', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ fetch('https://translized.eu-4.evennode.com/term/update', {
 
 ```js
 const response = await axios.post(
-  'https://translized.eu-4.evennode.com/term/update',
+  'https://api.translized.com/term/update',
   {
     projectId: 'A3KJtLw4mt',
     termKey: 'Api.test',

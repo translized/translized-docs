@@ -17,7 +17,7 @@ Request type: <span style={{ color: '#167219' }}>_POST_</span>
 ### API Endpoint
 
 ```url
-https://translized.eu-4.evennode.com/project/add
+https://api.translized.com/project/add
 ```
 
 ### Parameters
@@ -36,14 +36,14 @@ https://translized.eu-4.evennode.com/project/add
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
      -d "{"projectName":"Translized", "languageCode":"en"}" \
-     https://translized.eu-4.evennode.com/project/add
+     https://api.translized.com/project/add
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://translized.eu-4.evennode.com/project/add', {
+fetch('https://api.translized.com/project/add', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ fetch('https://translized.eu-4.evennode.com/project/add', {
 
 ```js
 const response = await axios.post(
-  'https://translized.eu-4.evennode.com/project/add',
+  'https://api.translized.com/project/add',
   {
     projectName: 'Translized',
     languageCode: 'en',
