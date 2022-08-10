@@ -4,4 +4,4 @@ sidebar_position: 1
 
 # Overview
 
-Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+This page was ment to help you better understand some of the Translized features.
