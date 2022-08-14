@@ -3,3 +3,44 @@ sidebar_position: 8
 ---
 
 # Over The Air
+
+Publish your translations faster and simpler than ever before. 
+Create release on Translized dashboard and watch as new translations appear in your mobile app.
+
+:::tip
+WIth OTA feature you can avoid slow process of publishing new app and fix typo or wrong translations in seconds.
+:::
+
+### Integrate SDK
+
+Setup guides: 
+
+- [iOS SDK](sdk/ios)
+- [Android SDK](sdk/android)
+
+### Create release
+
+:::info
+Release is snapshot of your current translations so take care that before creating release you translate and verify all translations.
+:::
+
+Go to **Over the air** tab inside your project (App -> Project -> Over the air).
+
+Click on **Create OTA release** button and fill the popup form.
+
+- **platform**: iOS / android
+- **min version**: Minimum version of the app for which this OTA release should be valid
+- **max version**: Maximum version of the app for which this OTA release should be valid
+
+:::info
+Min and max versions defines app versions that should receive the update. Input min and max versions using semantic version convention.
+:::
+
+Save release and all users shall see updated translations once they enter the app.
+
+### Check releases
+
+On the left side of **Over the air** tab inside your project, toogle and select platform (iOS / android).
+
+You will see all releases for that platform, and you can also download the files generated for particular release.
+
