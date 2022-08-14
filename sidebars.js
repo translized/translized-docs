@@ -75,17 +75,28 @@ const sidebars = {
       type: 'category',
       label: 'CLI',
       items: [
-        'cli/homebrew',
+        'cli/basics',
         {
           type: 'category',
-          label: 'Manual',
+          label: 'Instalation',
           collapsed: true,
           items: [
-            'cli/manual/ios',
-            'cli/manual/android',
-            'cli/manual/universal',
+            'cli/homebrew',
+            {
+              type: 'category',
+              label: 'Manual',
+              collapsed: true,
+              items: [
+                'cli/manual/ios',
+                'cli/manual/android',
+                'cli/manual/universal',
+              ],
+            },
           ],
         },
+        'cli/init',
+        'cli/download',
+        'cli/upload'
       ],
       collapsed: true,
     },

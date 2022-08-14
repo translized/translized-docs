@@ -1,0 +1,56 @@
+---
+sidebar_position: 1
+tags:
+  - cli
+  - basics
+---
+
+# Basics
+
+Translized CLI allows you to easily download and upload localization files to your project, without leaving Terminal.
+Integrate it in your CI/CD and be sure you always have latest translations in your build.
+
+### Getting started
+
+1. Install CLI through [Brew](/docs/cli/homebrew) or add it Manually following Installation section
+
+2. Initialize your project by executing the `translized init` command. This lets you define your preferred locale file format, download, upload files and more. 
+It will create .translized.yml file where setup preferences will be stored. 
+Later you can change it directly or by runing the command again.
+
+3. Download your translation files by executing the `translized download` command.
+
+4. Upload changed primary language file by executing the `translized upload` command whenever you add new keys or change existing.
+
+
+### Configuration file 
+
+After runing `translized init` command, .translized.yml file will be created.
+Setup preferences will be stored here and later you can change it directly or by runing the command again.
+
+You can add additional download options and setup workflow per your needs:
+- transform placeholders on download so you can share one project for iOS and android
+- replace empty translations with primary language translations or with pseudolocalized strings
+
+You can pass additional options for upload command directly in terminal so you can have flexibility each time you upload:
+- override existing translations
+- tag all new keys
+- tag all updated keys
+
+File example:
+```ruby
+---
+:translized:
+  :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
+  :project_id: zAhfwMRi7f
+  :download:
+    :path: "./<locale_code>.lproj/Localizable.strings"
+    :file_format: strings
+    options:
+      transform_placeholders_iOS_android: true
+      replace_empty:
+        :primary_translations: true
+  :upload:
+    :path: "./en.lproj/Localizable.strings"
+    :language_code: en
+```

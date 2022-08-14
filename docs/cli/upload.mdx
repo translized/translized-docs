@@ -1,0 +1,59 @@
+---
+sidebar_position: 5
+tags:
+  - cli
+  - upload
+---
+
+# Upload
+
+Upload new and/or updated keys by executing the `translized upload` command whenever you add new keys or change existing.
+
+You can pass additional options for upload command directly in terminal so you can have flexibility each time you upload:
+- override existing translations
+- tag all updated keys
+- tag all new keys
+
+### Override existing translations
+
+If you have changed some existing translations and you want to update them on Translized too you can use this flag.
+It means that all existing translations for language you upload file will be updated with the translations from the file.
+New keys and translations are added normally.
+
+**Use this when you change translations directly in file and you want to sync it on platform**
+
+Use this by passing option -o true after the command
+
+`translized upload -o true`
+
+### Tag all updated keys
+
+If you have selected option override existing translations you can also use option to tag all updated keys.
+It means that particular key will be tagged only if translation changed.
+
+**Only updated keys will be tagged and override existing translations must be true for this option to work**
+
+Use this by passing option -u TAG_NAME after the command. Change TAG_NAME with your desired tag name.
+
+`translized upload -o true -u TAG_NAME`
+
+### Tag all new keys
+
+You can use option to tag all new keys.
+This can help you organize keys around features, tickets or screens.
+
+**Only new keys will be tagged**
+
+Use this by passing option -n TAG_NAME after the command. Change TAG_NAME with your desired tag name.
+
+`translized upload -n TAG_NAME`
+
+:::info
+
+**These options are optional and you don't need to use them**
+
+:::
+
+Example of all options together:
+
+`translized upload -o true -u UPDATED_KEYS_TAG_NAME -n NEW_KEYS_TAG_NAME`
