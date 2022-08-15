@@ -1,0 +1,93 @@
+---
+sidebar_position: 3
+tags:
+  - cli
+  - init
+---
+
+# Init
+
+Initialize your project by executing the following command:
+
+```bash
+translized init
+```
+
+Series of questions lets you define your preferred locale file format, download, upload files and more.
+
+## Setup Questions/Options
+
+### 1. API Key
+
+Provide your API key. You can find it in your [API access](https://app.translized.com/account/api) settings (App -> Account -> API Access).
+
+### 2. Project ID
+
+Provide your project id. You can find it in your project settings (App -> Project -> Settings).
+
+### 3. File format
+
+Choose your preferred file format from the list. The file format that you are using inside your project.
+
+### 4. Download file path
+
+This is path where you want translation files to me downloaded to. By default it is the current directory.
+
+:::tip
+For example, if you want to choose **src/locale** as a path where you want your files to be downloaded to you should enter:
+
+`src/locale/<locale_code>.json`
+
+Where **<locale_code>** is variable for language locale that you are working with.
+:::
+
+### 4. Upload file path
+
+This is path from where you want to upload your translation file to Translized app. By default it **English** language in your choosen file format (step 3), inside your current directory.
+
+:::tip
+For example, if you want to change **English** language to **Spanish** language that is inside **src/locale** directory you should enter:
+
+`src/locale/es.json`
+:::
+
+### 5. Upload file language code
+
+Language code for upload file. By default it is **English** (en).
+
+:::info
+Complete list of supported languages and their values can be found in [**Supported Languages**](#) section.
+:::
+
+### 6. Additional Download Options
+
+Optionaly you can add additional options to your [download command](https://docs.translized.com/docs/cli/commands/download):
+
+- Replace empty translations with primary language translations
+- Replace empty translations with pseudolocalized translations of primary language
+  - Choosing this option, will prompt question if you want to increase pseudolocalization translation length
+
+### Configuration file
+
+It will create **.translized.yml** file where setup preferences will be stored.
+
+Later you can change it directly or by runing the command again.
+
+File example:
+
+```yml
+---
+:translized:
+  :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
+  :project_id: zAhfwMRi7f
+  :download:
+    :path: './<locale_code>.lproj/Localizable.strings'
+    :file_format: strings
+    options:
+      transform_placeholders_iOS_android: true
+      replace_empty:
+        :primary_translations: true
+  :upload:
+    :path: './en.lproj/Localizable.strings'
+    :language_code: en
+```

@@ -94,9 +94,16 @@ const sidebars = {
             },
           ],
         },
-        'cli/init',
-        'cli/download',
-        'cli/upload'
+        {
+          type: 'category',
+          label: 'Commands',
+          collapsed: true,
+          items: [
+            'cli/commands/init',
+            'cli/commands/upload',
+            'cli/commands/download',
+          ],
+        },
       ],
       collapsed: true,
     },

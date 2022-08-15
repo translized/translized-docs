@@ -10,47 +10,83 @@ tags:
 Translized CLI allows you to easily download and upload localization files to your project, without leaving Terminal.
 Integrate it in your CI/CD and be sure you always have latest translations in your build.
 
-### Getting started
+## Getting started
 
-1. Install CLI through [Brew](/docs/cli/homebrew) or add it Manually following Installation section
+### Installation
 
-2. Initialize your project by executing the `translized init` command. This lets you define your preferred locale file format, download, upload files and more. 
-It will create .translized.yml file where setup preferences will be stored. 
-Later you can change it directly or by runing the command again.
+Install CLI through [Brew](/docs/cli/homebrew) or add it Manually following Installation section
 
-3. Download your translation files by executing the `translized download` command.
+### CLI Initialization
 
-4. Upload changed primary language file by executing the `translized upload` command whenever you add new keys or change existing.
+To initialize CLI inside your project, from projects root directory execute the command:
 
+```shell
+translized init
+```
 
-### Configuration file 
+It will create **.translized.yml** file where setup preferences will be stored.
 
-After runing `translized init` command, .translized.yml file will be created.
+:::tip
+You can change .translized.yml file at anytime directly or by running `translized init` command again.
+:::
+
+Based on this file, Translized knows with which language you are working localy and will upload and download desired translations with the respective commands.
+
+### Download Translations
+
+To download your translation files from Translized app directly to your project run:
+
+```shell
+translized download
+```
+
+### Upload Translations
+
+When you want to upload translations from your project to Translized app you need to run:
+
+```shell
+translized upload
+```
+
+:::info
+You will upload language based on `.translized.yml` and setup that you did.
+:::
+
+:::tip
+Usually you will work localy with primary language and will update that one, but ofcourse you can upload other languages as well, just be sure to specify them with **translized init** command.
+:::
+
+## Configuration YML file
+
+After runing `translized init` command, **.translized.yml** file will be created.
 Setup preferences will be stored here and later you can change it directly or by runing the command again.
 
 You can add additional download options and setup workflow per your needs:
+
 - transform placeholders on download so you can share one project for iOS and android
 - replace empty translations with primary language translations or with pseudolocalized strings
 
 You can pass additional options for upload command directly in terminal so you can have flexibility each time you upload:
+
 - override existing translations
 - tag all new keys
 - tag all updated keys
 
 File example:
-```ruby
+
+```yml
 ---
 :translized:
   :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
   :project_id: zAhfwMRi7f
   :download:
-    :path: "./<locale_code>.lproj/Localizable.strings"
+    :path: './<locale_code>.lproj/Localizable.strings'
     :file_format: strings
     options:
       transform_placeholders_iOS_android: true
       replace_empty:
         :primary_translations: true
   :upload:
-    :path: "./en.lproj/Localizable.strings"
+    :path: './en.lproj/Localizable.strings'
     :language_code: en
 ```

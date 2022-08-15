@@ -7,12 +7,17 @@ tags:
 
 # Upload
 
-Upload new and/or updated keys by executing the `translized upload` command whenever you add new keys or change existing.
+Whenever you add new keys or change existing ones, you can upload them to Translized app via upload command:
+
+```bash
+translized upload
+```
 
 You can pass additional options for upload command directly in terminal so you can have flexibility each time you upload:
-- override existing translations
-- tag all updated keys
-- tag all new keys
+
+- Override existing translations
+- Tag all updated keys
+- Tag all new keys
 
 ### Override existing translations
 
@@ -24,36 +29,46 @@ New keys and translations are added normally.
 
 Use this by passing option -o true after the command
 
-`translized upload -o true`
+```bash
+translized upload -o true
+```
 
 ### Tag all updated keys
 
 If you have selected option override existing translations you can also use option to tag all updated keys.
 It means that particular key will be tagged only if translation changed.
 
+:::info
 **Only updated keys will be tagged and override existing translations must be true for this option to work**
+:::
 
 Use this by passing option -u TAG_NAME after the command. Change TAG_NAME with your desired tag name.
 
-`translized upload -o true -u TAG_NAME`
+```bash
+translized upload -o true -u TAG_NAME
+```
 
 ### Tag all new keys
 
 You can use option to tag all new keys.
 This can help you organize keys around features, tickets or screens.
 
+:::info
 **Only new keys will be tagged**
+:::
 
 Use this by passing option -n TAG_NAME after the command. Change TAG_NAME with your desired tag name.
 
-`translized upload -n TAG_NAME`
+```bash
+translized upload -n TAG_NAME
+```
 
-:::info
-
+:::tip
 **These options are optional and you don't need to use them**
-
 :::
 
 Example of all options together:
 
-`translized upload -o true -u UPDATED_KEYS_TAG_NAME -n NEW_KEYS_TAG_NAME`
+```bash
+translized upload -o true -u UPDATED_KEYS_TAG_NAME -n NEW_KEYS_TAG_NAME
+```
