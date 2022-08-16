@@ -56,6 +56,12 @@ const config = {
         items: [
           {
             type: 'doc',
+            docId: 'guides/getting-started',
+            position: 'left',
+            label: 'Guides',
+          },
+          {
+            type: 'doc',
             docId: 'getting-started',
             position: 'left',
             label: 'Docs',
@@ -150,7 +156,8 @@ const config = {
           }
         },
       ]
-    ]
+    ],
+    staticDirectories: ['static']
 };
 
 module.exports = config;

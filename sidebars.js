@@ -123,6 +123,9 @@ const sidebars = {
     'features/translation-memory',
     'features/screenshots',
     'features/over-the-air',
+  ],
+  translizedGuides: [
+    'guides/getting-started',
   ]
 };
 
