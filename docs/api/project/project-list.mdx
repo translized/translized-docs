@@ -17,7 +17,7 @@ Request type: <span style={{ color: '#167219' }}>_POST_</span>
 ### API Endpoint
 
 ```url
-https://translized.eu-4.evennode.com/project/list
+https://api.translized.com/project/list
 ```
 
 ### Parameters
@@ -32,14 +32,14 @@ None
 ```curl
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
-     https://translized.eu-4.evennode.com/project/list
+     https://api.translized.com/project/list
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://translized.eu-4.evennode.com/project/list', {
+fetch('https://api.translized.com/project/list', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ fetch('https://translized.eu-4.evennode.com/project/list', {
 
 ```js
 const response = await axios.post(
-  'https://translized.eu-4.evennode.com/project/list',
+  'https://api.translized.com/project/list',
   {
     headers: {
       'Content-Type': 'application/json',

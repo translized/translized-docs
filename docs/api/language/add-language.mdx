@@ -17,7 +17,7 @@ Request type: <span style={{ color: '#167219' }}>_POST_</span>
 ### API Endpoint
 
 ```url
-https://translized.eu-4.evennode.com/language/add
+https://api.translized.com/language/add
 ```
 
 ### Parameters
@@ -35,15 +35,15 @@ https://translized.eu-4.evennode.com/language/add
 ```curl
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
-     -d "{"projectId":"A3KJtLw4mt", "languageCode":"az"}" \
-     https://translized.eu-4.evennode.com/language/add
+     -d "{"projectId":"A3KJtLw4mt", "languageCode":"de"}" \
+     https://api.translized.com/language/add
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://translized.eu-4.evennode.com/language/add', {
+fetch('https://api.translized.com/language/add', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ fetch('https://translized.eu-4.evennode.com/language/add', {
   },
   body: JSON.stringify({
     projectId: 'A3KJtLw4mt',
-    languageCode: 'az',
+    languageCode: 'de',
   }),
 })
   .then((response) => response.json())
@@ -64,10 +64,10 @@ fetch('https://translized.eu-4.evennode.com/language/add', {
 
 ```js
 const response = await axios.post(
-  'https://translized.eu-4.evennode.com/language/add',
+  'https://api.translized.com/language/add',
   {
     projectId: 'A3KJtLw4mt',
-    languageCode: 'az',
+    languageCode: 'de',
   }
 );
 const data = response.result;
@@ -90,7 +90,8 @@ TODO: return created language object
 ```js
 {
   "result": {
-    "success": true
+    "code": "de",
+    "label": "German"
   }
 }
 ```

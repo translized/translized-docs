@@ -17,7 +17,7 @@ Request type: <span style={{ color: '#167219' }}>_POST_</span>
 ### API Endpoint
 
 ```url
-https://translized.eu-4.evennode.com/project/export
+https://api.translized.com/project/export
 ```
 
 ### Parameters
@@ -27,6 +27,9 @@ https://translized.eu-4.evennode.com/project/export
 | projectId    | String | True     | Id of your project         |
 | exportFormat | String | True     | Format of file for export  |
 | languageCode | String | True     | Code of language to export |
+| replaceEmptyWithPrimaryTranslations | Boolean | False    | Replace empty translations with primary translations  |
+| replaceEmptyWithPseudolocalization  | Object  | False    | Replace empty translations with pseudolocalized primary translations. 'increasePercentage' parameter in Object sets the length of pseudolocalized string (example: "replaceEmptyWithPseudolocalization":{"increasePercentage": 83} ) |
+| transformPlaceholdersiOSAndroid     | Boolean | False    | Replace all placeholders with native ones. Use this parameter when you have one Translized project for both iOS and android.   |
 
 ### Example requests
 
@@ -37,14 +40,14 @@ https://translized.eu-4.evennode.com/project/export
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
      -d "{"projectId":"A3KJtLw4mt", "exportFormat":"json", "languageCode":"en"}" \
-     https://translized.eu-4.evennode.com/project/export
+     https://api.translized.com/project/export
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://translized.eu-4.evennode.com/project/export', {
+fetch('https://api.translized.com/project/export', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -66,7 +69,7 @@ fetch('https://translized.eu-4.evennode.com/project/export', {
 
 ```js
 const response = await axios.post(
-  'https://translized.eu-4.evennode.com/project/export',
+  'https://api.translized.com/project/export',
   {
     projectId: 'A3KJtLw4mt',
     exportFormat: 'json',

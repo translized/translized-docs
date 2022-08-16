@@ -17,7 +17,7 @@ Request type: <span style={{ color: '#167219' }}>_POST_</span>
 ### API Endpoint
 
 ```url
-https://translized.eu-4.evennode.com/project
+https://api.translized.com/project
 ```
 
 ### Parameters
@@ -35,14 +35,14 @@ https://translized.eu-4.evennode.com/project
 curl -X POST -H "Content-Type: application/json" \
 -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
 -d "{"projectId": "A3KJtLw4mt"}" \
-https://translized.eu-4.evennode.com/project
+https://api.translized.com/project
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://translized.eu-4.evennode.com/project', {
+fetch('https://api.translized.com/project', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ fetch('https://translized.eu-4.evennode.com/project', {
 
 ```js
 const response = await axios.post(
-  'https://translized.eu-4.evennode.com/project',
+  'https://api.translized.com/project',
   {
     projectId: 'A3KJtLw4mt',
   },
@@ -88,11 +88,19 @@ const data = response.result;
 ```js
 {
   "result": {
-    "id": "A3KJtLw4ms",
-    "name": "Translized",
-    "createdAt": "2021-08-30T12:26:36.295Z",
+    "id": "ZwCEF5Qj1b",
+    "name": "Test",
+    "createdAt": "2022-05-30T19:57:40.789Z",
     "primaryLanguage": "en",
-    "terms": 586
+    "statistics": {
+      "totalTerms": 1822,
+      "totalTranslated": 1822,
+      "totalWords": 10801,
+      "languageStatistics": {
+        "en": 1822,
+        "de": 0
+      }
+    }
   }
 }
 ```

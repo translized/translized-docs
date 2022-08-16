@@ -1,0 +1,79 @@
+---
+sidebar_position: 4
+tags:
+  - cli
+  - download
+---
+
+# Download
+
+Download your translation files by executing the `translized download` command.
+
+You can add additional download options and setup workflow per your needs.
+
+### Transform placeholders
+
+Transform placeholders on download to native one's for iOS and android.
+
+e.g. Android string with placeholders **I live in %1$s with %2$s for %3$.2f years.** will be exported as **I live in %@ with %@ for %.2f years.** on iOS
+
+This allows you to share project between iOS and android and don't worry about platform specific placeholders.
+
+### Replace empty translations
+
+It is a common situation that translations are not ready while developing some feature, so when you change a language you can get screens with empty titles, labels, texts... 
+
+Choose one of two download options and avoid empty screens on non-primary languages:
+
+1. Replace empty with primary language translations 
+
+2. Replace empty with pseudolocalized strings
+
+  **This option is particular usefull if you wan't to test how UI looks when strings are longer than primary language**
+
+  If selected `translized init` command will ask for increase percentage where you can input how much longer strings you want in percentage.
+
+e.g. if you set 50 for increase_percentage: **Welcome to Translized!** will be exported like **Welcome to Translized!Welcome to ** in files for languages which are not yet translated.
+
+:::info
+
+**Only empty translations will be replaced!**
+
+:::
+
+File example for replace empty with primary translation:
+```ruby
+---
+:translized:
+  :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
+  :project_id: zAhfwMRi7f
+  :download:
+    :path: "./<locale_code>.lproj/Localizable.strings"
+    :file_format: strings
+    options:
+      transform_placeholders_iOS_android: true
+      replace_empty:
+        :primary_translations: true
+  :upload:
+    :path: "./en.lproj/Localizable.strings"
+    :language_code: en
+```
+
+File example for replace empty with pseudolocalization:
+```ruby
+---
+:translized:
+  :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
+  :project_id: zAhfwMRi7f
+  :download:
+    :path: "./<locale_code>.lproj/Localizable.strings"
+    :file_format: strings
+    options:
+      transform_placeholders_iOS_android: true
+      replace_empty:
+        :pseudolocalization: true
+        :increase_percentage: 55
+  :upload:
+    :path: "./en.lproj/Localizable.strings"
+    :language_code: en
+```

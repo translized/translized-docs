@@ -62,6 +62,7 @@ const sidebars = {
           collapsed: true,
           items: [
             'api/term/terms-list',
+            'api/term/get-term',
             'api/term/add-term',
             'api/term/update-term',
             'api/term/delete-term',
@@ -74,15 +75,33 @@ const sidebars = {
       type: 'category',
       label: 'CLI',
       items: [
-        'cli/homebrew',
+        'cli/basics',
         {
           type: 'category',
-          label: 'Manual',
+          label: 'Instalation',
           collapsed: true,
           items: [
-            'cli/manual/ios',
-            'cli/manual/android',
-            'cli/manual/universal',
+            'cli/homebrew',
+            {
+              type: 'category',
+              label: 'Manual',
+              collapsed: true,
+              items: [
+                'cli/manual/ios',
+                'cli/manual/android',
+                'cli/manual/universal',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Commands',
+          collapsed: true,
+          items: [
+            'cli/commands/init',
+            'cli/commands/upload',
+            'cli/commands/download',
           ],
         },
       ],

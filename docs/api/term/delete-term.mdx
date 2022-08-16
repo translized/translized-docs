@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 tags:
   - api
   - term
@@ -17,7 +17,7 @@ Request type: <span style={{ color: '#167219' }}>_POST_</span>
 ### API Endpoint
 
 ```url
-https://translized.eu-4.evennode.com/term/delete
+https://api.translized.com/term/delete
 ```
 
 ### Parameters
@@ -36,14 +36,14 @@ https://translized.eu-4.evennode.com/term/delete
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
      -d "{"projectId":"A3KJtLw4mt", "termKey":"Api.test"}" \
-     https://translized.eu-4.evennode.com/term/delete
+     https://api.translized.com/term/delete
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://translized.eu-4.evennode.com/term/delete', {
+fetch('https://api.translized.com/term/delete', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ fetch('https://translized.eu-4.evennode.com/term/delete', {
 
 ```js
 const response = await axios.post(
-  'https://translized.eu-4.evennode.com/term/delete',
+  'https://api.translized.com/term/delete',
   {
     projectId: 'A3KJtLw4mt',
     termKey: 'Api.test',
