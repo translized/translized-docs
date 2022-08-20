@@ -25,6 +25,12 @@ const Home = () => {
           <p className="hero__subtitle">
             Learn more about documentation, better understand Translized features and get started guides for localizing your products.
           </p>
+            <Link
+              className="button button--outline button--primary button--lg hero-button"
+              to={useBaseUrl('docs/guides/getting-started')}
+            >
+              Getting Started
+            </Link>
 
           <div className={styles.gridButtonsWrapper}>
             <Link
