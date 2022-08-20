@@ -115,10 +115,10 @@ const sidebars = {
     },
   ],
   translizedFeatures: [
-    'features/overview',
     'features/strings',
     'features/contributors',
     'features/file-formats',
+    'features/supported-languages',
     'features/tag-terms',
     'features/verify-translation',
     'features/machine-translations',

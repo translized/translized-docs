@@ -63,13 +63,10 @@ fetch('https://api.translized.com/language/add', {
 <TabItem value="js-axios" label="Javascript Axios">
 
 ```js
-const response = await axios.post(
-  'https://api.translized.com/language/add',
-  {
-    projectId: 'A3KJtLw4mt',
-    languageCode: 'de',
-  }
-);
+const response = await axios.post('https://api.translized.com/language/add', {
+  projectId: 'A3KJtLw4mt',
+  languageCode: 'de',
+});
 const data = response.result;
 ```
 
@@ -79,13 +76,11 @@ const data = response.result;
 :::info
 
 - **projectId** can be found inside your project's **_settings_**. (Translized App > Your Project > Settings )
-- List of all supported **languageCode** values can be found [TODO](#).
+- List of all supported languages with **languageCode** values can be found in our [Supported Languages](/docs/features/supported-languages) section.
 
 :::
 
 ### Example response
-
-TODO: return created language object
 
 ```js
 {

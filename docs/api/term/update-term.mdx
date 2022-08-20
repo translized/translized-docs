@@ -55,8 +55,8 @@ fetch('https://api.translized.com/term/update', {
   body: JSON.stringify({
     projectId: 'A3KJtLw4mt',
     termKey: 'Api.test',
-    translation:"API TEST", 
-    languageCode: "en"
+    translation: 'API TEST',
+    languageCode: 'en',
   }),
 })
   .then((response) => response.json())
@@ -68,15 +68,12 @@ fetch('https://api.translized.com/term/update', {
   <TabItem value="js-axios" label="Javascript Axios">
 
 ```js
-const response = await axios.post(
-  'https://api.translized.com/term/update',
-  {
-    projectId: 'A3KJtLw4mt',
-    termKey: 'Api.test',
-    translation:"API TEST", 
-    languageCode: "en"
-  }
-);
+const response = await axios.post('https://api.translized.com/term/update', {
+  projectId: 'A3KJtLw4mt',
+  termKey: 'Api.test',
+  translation: 'API TEST',
+  languageCode: 'en',
+});
 const data = response.result;
 ```
 
@@ -86,7 +83,7 @@ const data = response.result;
 :::info
 
 - **projectId** can be found inside your project's **_settings_**. (Translized App > Your Project > Settings )
-- List of all supported **languageCode** values can be found [TODO](#).
+- List of all supported languages with **languageCode** values can be found in our [Supported Languages](/docs/features/supported-languages) section.
 - Term **context** is not required but it is good way to describe where or how term will be used.
 
 :::

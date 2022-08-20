@@ -14,7 +14,7 @@ Set of rules for complete automation of localization processes inside your proje
 Translized will automatically toggle (mark) other language translations as **"Unverified"** whenever you update primary language translation.
 
 :::tip
-We recommend you have this feature enabled because it will most likely help you to track what translations are up to date and ready for facing your users.
+We recommend having this feature enabled at all times as it helps you keep track of which translations are up-to-date, and which need additional review.
 :::
 
 ## Pre-Translations
@@ -22,9 +22,9 @@ We recommend you have this feature enabled because it will most likely help you 
 With Pre-Translation feature, you can **automatically translate new keys into multiple languages** directly after importing your files to Translized.
 
 - ### **From Language**
-  - Language that you want to translate from. Usuallay it will be your primary language on project, since most likely you will have most terms already translated on your primary language.
+  - Language you are translating from. This is usually the primary project language - because it already has all terms translated.
 - ### **To Languages**
-  - Languages that you want your newly imported terms to be translated to. You can select as many languages as are on your project.
+  - Language you want your newly imported terms to be translated to. You can select as many languages as there are on your project.
 - ### **Translation Memory**
   - If this option is checked, Translized will perform search and check for already existing translations across all of your projects. You can check more details and how it works on [Translation Memory page](/docs/features/translation-memory).
 - ### **Machine Translation**
@@ -43,20 +43,20 @@ Automation rules that will apply on **New** or **Updated** terms from your impor
   - This option will allow you to ovveride existing translations with imported terms. Checking this option will unlock **Updated Terms** option below.
 
   :::tip
-  This option is useful to be unchecked if you want to set your localization flow in a way where you can only update term translations manually inside app or you have translators dedicated to specific languages and you don't want someone else accidentally to mess up translations with file import.
+  We recommend leaving this option unchecked, if you want to set a localization flow where term translations can only be updated manually within the app. Additionally, if you have a language-specific translator, you don’t want to risk accidentally modifying the translations when importing a file.
   :::
 
 - ### **New Terms**
   - **Tags**
-    - Set tags that you previously created in your project to new terms that are imported.
+    - Assign previously created tags to newly imported terms.
 - ### **Updated Terms**
 
   - **Tags**
-    - Set tags that you previously created in your project to terms that have been updated inside your imported file.
+    - Assign previously created tags to terms which have been updated within your imported file.
   - **Deleted Terms**
 
-    - Toogle this option to delete all other translations for term that has been updated from your imported file.
+    - Activate this option if you want to delete all other term translations for a term which has been updated in your imported file.
 
     :::tip
-    This option can be useful to completly be sure that other translations need to be updated as well.
+    We recommend using this option to ensure all other translations are updated.
     :::
