@@ -1,0 +1,79 @@
+---
+tags:
+  - import
+  - terms
+---
+
+# Import Localization Terms
+
+Once you’ve created your project, it’s time to add terms that need to be translated.
+
+Within Translized, this can be done in three different ways:
+
+- Manually
+- Translized’s CLI
+- Over the Air (OTA) Mobile SDK
+
+<video width="100%" height="520" controls>
+  <source
+    src="/guides/importing-localization-terms/Translized_Guide_-_Import.mp4"
+    type="video/mp4"
+  />
+</video>
+
+## Import terms manually (in bulk)
+
+To import a file manually, visit the Import tab on the left hand side, and drag or drop your file into the designated space.
+
+:::tip
+File formats you can import: *Microsof Excel (.xlsx), CSV (.csv), Android (.xml), iOS (.strings), Java (.properties), JSON (.json), Angular (.xlf), YAML (.yml) .NET (.resx), ARB (.arb), PHP (.php), PO (.po).*
+:::
+
+Next, choose the language in which the terms have been translated.
+
+![Screen Shot 2022-08-14 at 10.20 1.png](/guides/importing-localization-terms/Screen_Shot_2022-08-14_at_10.20_1.png)
+
+Configure import with the following options:
+
+- **Return obsolete terms:** Obsolete terms are those found in the project, but not in the imported file. You have the option to return all obsolete terms when importing a file - so you can keep, or delete them from your project.
+- **Override Import Automations rules:** Disable previously set automation rules.
+
+:::tip
+Learn more about [Continuous Localization Automations](/docs/features/continuous-localization-automations)
+:::
+
+- **Override existing translations:** Override existing term translations with the imported ones.
+
+### Add a single term manually
+
+Additionally, you can manually import a single term on the Terms page.
+
+![Screen Shot 2022-08-14 at 10.22 1.png](/guides/importing-localization-terms/Screen_Shot_2022-08-14_at_10.22_1.png)
+
+- **Term:** Term key.
+- **Context:** Help your team members by providing additional context on where the term is being used.
+- **Term tag:** Tag your newly imported term.
+
+Once imported, you’ll notice that your Terms page has been populated with the newly added terms.
+
+![Screen Shot 2022-08-15 at 9.32 1.png](/guides/importing-localization-terms/Screen_Shot_2022-08-15_at_9.32_1.png)
+
+## Import files using Translized’s CLI
+
+Use our CLI and update localization with a single line from your terminal. Additionally, integrate CLI in your build process, and make sure you have the latest translations in every build.
+
+:::tip
+Learn more about [Translized’s CLI](/docs/cli/homebrew).
+:::
+
+## Use Over the Air (OTA) Mobile SDK
+
+No more need to create a new release each time you want to make textual changes. Integrate our Mobile SDK and publish translation in real-time on App Store or Google Play.
+
+:::tip
+Learn more about SDK [for iOS](/docs/sdk/ios), and [for Android](/docs/sdk/android).
+:::
+
+# Contact us for additional help
+
+If you ever need help, we’re just an email away at **info@translized.com** 👋 Don’t be a stranger, we love hearing your feedback!

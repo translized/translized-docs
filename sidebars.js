@@ -116,16 +116,25 @@ const sidebars = {
   ],
   translizedFeatures: [
     'features/overview',
-    'features/continuous-localization-automations',
+    'features/strings',
+    'features/contributors',
+    'features/file-formats',
+    'features/tag-terms',
+    'features/verify-translation',
     'features/machine-translations',
     'features/human-translations',
-    'features/translation-history',
     'features/translation-memory',
-    'features/screenshots',
+    'features/translation-history',
+    'features/continuous-localization-automations',
     'features/over-the-air',
+    'features/screenshots',
+    'features/comments',
   ],
   translizedGuides: [
     'guides/getting-started',
+    'guides/user-management',
+    'guides/importing-localization-terms',
+    'guides/translate-terms',
   ]
 };
 

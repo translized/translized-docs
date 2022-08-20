@@ -1,0 +1,39 @@
+/* Material UI chip css */
+.chip_blue {
+  margin: 0 0.5rem 0.5rem 0;
+  background-color: var(--ifm-color-primary-light);
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  max-width: max-content;
+}
+
+.chip_red {
+  margin: 0 0.5rem 0.5rem 0;
+  background-color: var(--ifm-color-danger-light);
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  max-width: max-content;
+}
+
+.chip_gray {
+  margin: 0 0.5rem 0.5rem 0;
+  background-color: var(--ifm-color-gray-600);
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  max-width: max-content;
+}
