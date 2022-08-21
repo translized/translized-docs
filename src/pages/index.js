@@ -18,12 +18,12 @@ const Home = () => {
         <div className={clsx('container', styles.innerHeroBanner)}>
           <img
             className={clsx(styles.heroBannerLogo, 'margin-vert--md')}
-            alt="Create React App logo"
+            alt="Translized Logo"
             src={useBaseUrl('img/logo.svg')}
           />
           <h1 className="hero__title">Translized Documentation</h1>
           <p className="hero__subtitle">
-            Learn more about documentation, better understand Translized features and get started guides for localizing your products.
+            Get started with guides for localizing your products, learn more about how to use Translized and better understand Translized features.
           </p>
             <Link
               className="button button--outline button--primary button--lg hero-button"
