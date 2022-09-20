@@ -135,6 +135,8 @@ const sidebars = {
     'guides/user-management',
     'guides/importing-localization-terms',
     'guides/translate-terms',
+    'guides/onboarding-guide-for-managers',
+    'guides/onboarding-guide-for-translators',
   ]
 };
 
