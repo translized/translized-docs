@@ -40,6 +40,11 @@ dependencies {
 }
 ```
 
+If you are using ProGuard, add the following rule:
+```
+-keep class com.github.translized.** { *; }
+```
+
 ## Getting started
 
 Before start make sure you have `projectId` and `otaToken`, which you can find in Project/Release and Account/API Access, and make a release on Translized Dashboard/Project/Release.
