@@ -113,6 +113,12 @@ const sidebars = {
       items: ['sdk/ios', 'sdk/android'],
       collapsed: true,
     },
+    {
+      type: 'category',
+      label: 'App Integrations',
+      items: ['integrations/webhooks', 'integrations/slack'],
+      collapsed: true,
+    },
   ],
   translizedFeatures: [
     'features/strings',

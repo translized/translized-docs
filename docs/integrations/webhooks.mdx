@@ -1,0 +1,250 @@
+# Webhooks
+
+Integrate your custom webhooks with Translized and respond to all events occuring inside app.
+
+## Setup
+
+In order to setup webohook only thing you need is **Webhook URL**.
+
+:::info
+**Webhook URL** is endpoint that Translized will ping when selected event occurs.
+:::
+
+In order for your **Webhook URL** to verify that Translized is sending request, you will be provided with generated **Webhook Secret** which you should keep secretly inside your code.
+
+:::tip
+If you feel that your **Webhook Secret** is compromised, you can always generate new one.
+:::
+
+## Events
+
+### Project
+
+**1. Imported** - _Trigger when you import translation file_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.imported",
+  "totalParsed": 150,
+  "totalAdded": 150,
+  "totalUpdated": 5,
+  "limitReached": false,
+  "projectId": "hQZDKhNhLf"
+}
+```
+
+**2. All translation translated** - _Trigger when when all terms are translated to every language_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.translatedAll"
+}
+```
+
+**3. All translations verified** - _Trigger when when all terms translations are verified_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.verifiedAll"
+}
+```
+
+### Language
+
+**1. Added** - _Trigger when new language is added to project_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.language.added",
+  "language": {
+    "code": "vi",
+    "label": "Vietnamese"
+  },
+  "projectId": "hQZDKhNhLf"
+}
+```
+
+**2. Removed** - _Trigger when language is deleted from the project_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.language.removed",
+  "language": {
+    "code": "es_MX"
+  },
+  "projectId": "hQZDKhNhLf"
+}
+```
+
+### Terms
+
+**1. Added** - _Trigger when new term is added from Translized app_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.key.added",
+  "key": {
+    "id": "2uJ5H8usMt",
+    "name": "NEW_TERM"
+  },
+  "projectId": "hQZDKhNhLf"
+}
+```
+
+**2. Modified** - _Trigger when term is modified (edited)_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.key.modified",
+  "key": {
+    "id": "2uJ5H8usMt",
+    "name": "NEW_TERM_EDITED",
+    "previousName": "NEW_TERM"
+  },
+  "projectId": "hQZDKhNhLf"
+}
+```
+
+**3. Deleted** - _Trigger when term is deleted_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.key.deleted",
+  "key": {
+    "name": "NEW_TERM"
+  },
+  "projectId": "hQZDKhNhLf"
+}
+```
+
+**4. Comment added** - _Trigger when new comment is added on term_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.key.comment.added",
+  "key": {
+    "id": "2uJ5H8usMt",
+    "name": "NEW_TERM"
+  },
+  "comment": "Hello World!",
+  "projectId": "hQZDKhNhLf"
+}
+```
+
+### Translation
+
+**1. Added** - _Trigger when new translation is added_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.translation.added",
+  "key": {
+    "id": "2uJ5H8usMt",
+    "name": "NEW_TERM"
+  },
+  "language": {
+    "code": "en"
+  },
+  "projectId": "hQZDKhNhLf"
+}
+```
+
+**2. Updated** - _Trigger when translation is updated_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.translation.updated",
+  "key": {
+    "id": "2uJ5H8usMt",
+    "name": "NEW_TERM"
+  },
+  "language": {
+    "code": "en"
+  },
+  "projectId": "hQZDKhNhLf"
+}
+```
+
+### Contributor
+
+**1. Added** - _Trigger when new contributor is added to the project_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.contributor.added",
+  "contributor": {
+    "email": "john.doe@email.com"
+  },
+  "projectId": "hQZDKhNhLf"
+}
+```
+
+**2. Deleted** - _Trigger when contributor is removed (deleted) from the project_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.contributor.deleted",
+  "contributor": {
+    "email": "john.doe@email.com"
+  },
+  "projectId": "hQZDKhNhLf"
+}
+```
+
+### Order
+
+**1. Created** - _Trigger when new translation order (Human Translation) is created_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.order.created",
+  "fromLanguageCode": "en",
+  "toLanguageCode": "es",
+  "projectId": "hQZDKhNhLf"
+}
+```
+
+**2. Completed** - _Trigger when translation order (Human Translation) is completed_
+
+Webhook Response:
+
+```json
+{
+  "event": "project.order.completed",
+  "fromLanguageCode": "en",
+  "toLanguageCode": "es",
+  "projectId": "hQZDKhNhLf"
+}
+```
+
+## Support
+
+Contact us through email: **info@translized.com**
