@@ -13,7 +13,7 @@ Initialize your project by executing the following command:
 translized init
 ```
 
-Series of questions lets you define your preferred locale file format, download, upload files and more.
+A series of questions lets you define your preferred locale file format, download, upload files and more.
 
 ## Setup Questions/Options
 
@@ -31,39 +31,33 @@ Choose your preferred file format from the list. The file format that you are us
 
 ### 4. Download file path
 
-This is path where you want translation files to me downloaded to. By default it is the current directory.
+This is the path where you want translation files to be downloaded to. By default, it is the current directory.
 
 :::tip
-For example, if you want to choose **src/locale** as a path where you want your files to be downloaded to you should enter:
+For example, if you want to choose **src/locale** as a path where you want your files to be downloaded you should enter the:
 
 `src/locale/<locale_code>.json`
 
-Where **<locale_code>** is variable for language locale that you are working with.
+Where **<locale_code>** is the variable for the language locale that you are working with.
 :::
 
-### 4. Upload file path
+### 5. Upload file path
 
-This is path from where you want to upload your translation file to Translized app. By default it **English** language in your choosen file format (step 3), inside your current directory.
+This is the path from where you want to upload your translation file to Translized app. By default, it will use download path specified in previous step (step 4).
 
-:::tip
-For example, if you want to change **English** language to **Spanish** language that is inside **src/locale** directory you should enter:
-
-`src/locale/es.json`
-:::
-
-### 5. (Optionaly) Upload file language code
+### 6. (Optional) Upload file language code
 
 If you used `<locale_code>` this will be automatically extracted.
 
-Only if you specify exact filepath (without `<locale_code>`) you will be asked for a language code for upload file. By default it is **English** (en).
+Only if you specify the exact file path (without `<locale_code>`) you will be asked for a language code for the upload file. By default, it is **English** (en).
 
 :::info Note
-Complete list of supported languages and their values can be found in [**Supported Languages**](/docs/features/supported-languages) section.
+A complete list of supported languages and their values can be found in [**Supported Languages**](/docs/features/supported-languages) section.
 :::
 
-### 6. Additional Download Options
+### 7. Additional Download Options
 
-Optionaly you can add additional options to your [download command](https://docs.translized.com/docs/cli/commands/download):
+Optionally you can add additional options to your [download command](https://docs.translized.com/docs/cli/commands/download):
 
 - Replace empty translations with primary language translations
 - Replace empty translations with pseudolocalized translations of primary language
@@ -73,7 +67,7 @@ Optionaly you can add additional options to your [download command](https://docs
 
 It will create **.translized.yml** file where setup preferences will be stored.
 
-Later you can change it directly or by runing the command again.
+Later you can change it directly or by running the command again.
 
 File example:
 

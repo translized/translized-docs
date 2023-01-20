@@ -9,19 +9,19 @@ tags:
 
 Download your translation files by executing the `translized download` command.
 
-You can add additional download options and setup workflow per your needs.
+You can add additional download options and set up workflow per your needs.
 
 ### Transform placeholders
 
-Transform placeholders on download to native one's for iOS and android.
+Transform placeholders on download to native ones for iOS and android.
 
 e.g. Android string with placeholders **I live in %1$s with %2$s for %3$.2f years.** will be exported as **I live in %@ with %@ for %.2f years.** on iOS
 
-This allows you to share project between iOS and android and don't worry about platform specific placeholders.
+This allows you to share the project between iOS and android and don't worry about platform-specific placeholders.
 
 ### Replace empty translations
 
-It is a common situation that translations are not ready while developing some feature, so when you change a language you can get screens with empty titles, labels, texts... 
+It is a common situation that translations are not ready while developing some feature, so when you change a language you can get screens with empty titles, labels, and texts... 
 
 Choose one of two download options and avoid empty screens on non-primary languages:
 
@@ -29,11 +29,11 @@ Choose one of two download options and avoid empty screens on non-primary langua
 
 2. Replace empty with pseudolocalized strings
 
-  **This option is particular usefull if you wan't to test how UI looks when strings are longer than primary language**
+  **This option is particularly useful if you want to test how UI looks when strings are longer than the primary language**
 
-  If selected `translized init` command will ask for increase percentage where you can input how much longer strings you want in percentage.
+  If selected `translized init` command will ask for an increase percentage where you can input how much longer strings you want in percentage.
 
-e.g. if you set 50 for increase_percentage: **Welcome to Translized!** will be exported like **Welcome to Translized!Welcome to ** in files for languages which are not yet translated.
+e.g. if you set 50 for increase_percentage: **Welcome to Translized!** will be exported like **Welcome to Translized!Welcome to ** in files for languages that are not yet translated.
 
 :::info
 
@@ -41,7 +41,7 @@ e.g. if you set 50 for increase_percentage: **Welcome to Translized!** will be e
 
 :::
 
-File example for replace empty with primary translation:
+File example for replacing empty with primary translation:
 ```ruby
 ---
 :translized:
@@ -59,7 +59,7 @@ File example for replace empty with primary translation:
     :language_code: en
 ```
 
-File example for replace empty with pseudolocalization:
+File example for replacing empty with pseudolocalization:
 ```ruby
 ---
 :translized:

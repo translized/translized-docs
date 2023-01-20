@@ -8,18 +8,18 @@ tags:
 
 # Configuration file
 
-After runing `translized init` command, **.translized.yml** file will be created.
-Setup preferences will be stored here and later you can change it directly or by runing the command again.
+After running `translized init` command, **.translized.yml** file will be created.
+Setup preferences will be stored here and later you can change it directly or by running the command again.
 
 You can add additional download options and setup workflow per your needs:
 
 - transform placeholders on download so you can share one project for iOS and android
 - replace empty translations with primary language translations or with pseudolocalized strings
 
-Set additional options for upload and download directly in configuration file:
+Set additional options for upload and download directly in the configuration file:
 
-- tags: Specify which tags to download or how to tag new or updated keys on upload. Provide as comma separated string
-- update_translations (specify should upload update existing translations)
+- tags: Specify which tags to download or how to tag new or updated keys on upload. Provide as a comma-separated string
+- update_translations: Specify should upload update existing translations.
 
 File example with explanations:
 
@@ -45,8 +45,8 @@ File example with explanations:
 ```
 
 :::info
-If you want to upload only one file you can specify exact location in the upload:path:.
-However, you will need to provide language_code bellow. Example bellow.
+If you want to upload only one file you can specify the exact location in the upload:path:.
+However, you will need to provide language_code. Example bellow.
 :::
 ```yml
 :upload:
@@ -60,7 +60,7 @@ You can specify multiple file paths for download and upload if needed.
 
 ### Tags and multiple files
 
-You can use tags to group keys into different locations when you want more customizable solution.
+You can use tags to group keys into different locations when you want a more customizable solution.
 
 ```yml
 ---
@@ -88,7 +88,7 @@ You can use tags to group keys into different locations when you want more custo
 
 ### iOS strings and stringsdict download
 
-For iOS plurals are specified in separate file with extension .stringsdict and you can specify download and upload with two paths as shown in example:
+For iOS plurals are specified in a separate file with extension .stringsdict and you can specify download and upload with two paths as shown in the example:
 
 ```yml
 ---
@@ -111,8 +111,8 @@ For iOS plurals are specified in separate file with extension .stringsdict and y
 
 ### Android setup
 
-Android base language filepath doesn't contain <locale_code> so for uploading all files, base language filepath should be provided.
-Download is handled automatically.
+Android base language file path doesn't contain <locale_code> so for uploading all files, a base language file path should be provided.
+The download is handled automatically.
 
 ```yml
 ---
