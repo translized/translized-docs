@@ -77,12 +77,11 @@ File example:
   :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
   :project_id: zAhfwMRi7f
   :download:
-  - :path: './<locale_code>.lproj/Localizable.strings'
-    :file_format: strings
+  - :path: './<locale_code>.json'
+    :file_format: json
     options:
-      transform_placeholders_iOS_android: true
       replace_empty:
         :primary_translations: true
   :upload:
-  - :path: './<locale_code>.lproj/Localizable.strings'
+  - :path: './<locale_code>.json'
 ```
