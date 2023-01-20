@@ -7,68 +7,71 @@ tags:
 
 # Upload
 
-Whenever you add new keys or change existing ones, you can upload them to Translized app via upload command:
+Whenever you add new keys or change existing ones, you can upload them to the Translized app via the upload command:
 
 ```bash
 translized upload
 ```
 
-You can pass additional options for upload command directly in terminal so you can have flexibility each time you upload:
+Set additional options for upload and download directly in the configuration file:
 
-- Override existing translations
-- Tag all updated keys
-- Tag all new keys
+- update_translation
+- tags
 
-### Override existing translations
+### Update existing translations
 
-If you have changed some existing translations and you want to update them on Translized too you can use this flag.
-It means that all existing translations for language you upload file will be updated with the translations from the file.
+If you have changed some existing translations and you want to update them on Translized too you can use this property.
+It means that all existing translations for the language you upload file will be updated with the translations from the file.
 New keys and translations are added normally.
 
-**Use this when you change translations directly in file and you want to sync it on platform**
+**Use this when you change translations directly in the file and you want to sync it on the platform**
 
-Use this by passing option -o true after the command
+Add this option to the configuration file under upload configuration:
 
-```bash
-translized upload -o true
+```yml
+:upload:
+- :path: "./<locale_code>.json"
+  :update_translations: true
 ```
 
 ### Tag all updated keys
 
-If you have selected option override existing translations you can also use option to tag all updated keys.
-It means that particular key will be tagged only if translation changed.
+If you have selected the option to update existing translations you can also use the option to tag all updated keys.
+It means that a particular key will be tagged only if the translation changed.
 
 :::info
 **Only updated keys will be tagged and override existing translations must be true for this option to work**
 :::
 
-Use this by passing option -u TAG_NAME after the command. Change TAG_NAME with your desired tag name.
+Add this option to the configuration file under upload configuration:
 
-```bash
-translized upload -o true -u TAG_NAME
+```yml
+:upload:
+- :path: "./<locale_code>.json"
+  :update_translations: true
+  :tags:
+    :updated_keys: updated_1, updated_2
 ```
 
 ### Tag all new keys
 
-You can use option to tag all new keys.
-This can help you organize keys around features, tickets or screens.
+You can use the option to tag all new keys.
+This can help you organize keys around features, tickets, or screens.
 
 :::info
 **Only new keys will be tagged**
 :::
 
-Use this by passing option -n TAG_NAME after the command. Change TAG_NAME with your desired tag name.
+Add this option to the configuration file under upload configuration:
 
-```bash
-translized upload -n TAG_NAME
+```yml
+:upload:
+- :path: "./<locale_code>.json"
+  :update_translations: true
+  :tags:
+    :new_keys: new_1, new_2
 ```
 
 :::tip
 **These options are optional and you don't need to use them**
 :::
-
-Example of all options together:
-
-```bash
-translized upload -o true -u UPDATED_KEYS_TAG_NAME -n NEW_KEYS_TAG_NAME
-```

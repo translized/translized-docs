@@ -13,11 +13,11 @@ Download your translation files by executing the command:
 translized download
 ```
 
-You can add additional download options and setup workflow per your needs.
+You can add additional download options and set up workflow per your needs.
 
 ### Transform placeholders
 
-Transform placeholders on download to native one's for iOS and android.
+Transform placeholders on download to native ones for iOS and android.
 
 For example, Android string with placeholders:
 
@@ -28,12 +28,12 @@ on iOS will be exported as:
 _**I live in %@ with %@ for %.2f years.**_
 
 :::tip
-**This allows you to share project between iOS and android and don't worry about platform specific placeholders.**
+**This allows you to share the project between iOS and android and don't worry about platform-specific placeholders.**
 :::
 
 ### Replace empty translations
 
-It is a common situation that translations are not ready while developing some feature, so when you change a language you can get screens with empty titles, labels, texts...
+It is a common situation that translations are not ready while developing some feature, so when you change a language you can get screens with empty titles, labels, and texts...
 
 Choose one of two download options and avoid empty screens on non-primary languages:
 
@@ -41,11 +41,11 @@ Choose one of two download options and avoid empty screens on non-primary langua
 - Replace empty with pseudolocalized strings
 
 :::tip
-**Replace empty with pseudolocalized strings option is particular usefull if you wan't to test how UI looks when strings are longer than primary language.**
+**Replace empty with pseudolocalized strings option is particularly useful if you wan't to test how UI looks when strings are longer than primary language.**
 
-You can set length of pseudo translations. For example:
+You can set the length of pseudo translations. For example:
 
-Setting value 50 as increased percentage, translation:
+Setting value 50 as an increased percentage, translation:
 
 **Welcome to Translized !**
 
@@ -53,14 +53,14 @@ will be exported like:
 
 **Welcome to Translized !Welcome to**
 
-in files for languages which are not yet translated.
+in files for languages that are not yet translated.
 :::
 
 :::info
 **Only empty translations will be replaced!**
 :::
 
-File example for replace empty with primary translation:
+File example for replacing empty with primary translation:
 
 ```yml
 ---
@@ -68,18 +68,17 @@ File example for replace empty with primary translation:
   :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
   :project_id: zAhfwMRi7f
   :download:
-    :path: './<locale_code>.lproj/Localizable.strings'
+  - :path: './<locale_code>.lproj/Localizable.strings'
     :file_format: strings
     options:
       transform_placeholders_iOS_android: true
       replace_empty:
         :primary_translations: true
   :upload:
-    :path: './en.lproj/Localizable.strings'
-    :language_code: en
+  - :path: './<locale_code>.lproj/Localizable.strings'
 ```
 
-File example for replace empty with pseudolocalization:
+File example for replacing empty with pseudolocalization:
 
 ```yml
 ---
@@ -87,7 +86,7 @@ File example for replace empty with pseudolocalization:
   :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
   :project_id: zAhfwMRi7f
   :download:
-    :path: './<locale_code>.lproj/Localizable.strings'
+  - :path: './<locale_code>.lproj/Localizable.strings'
     :file_format: strings
     options:
       transform_placeholders_iOS_android: true
@@ -95,6 +94,5 @@ File example for replace empty with pseudolocalization:
         :pseudolocalization: true
         :increase_percentage: 55
   :upload:
-    :path: './en.lproj/Localizable.strings'
-    :language_code: en
+  - :path: './<locale_code>.lproj/Localizable.strings'
 ```

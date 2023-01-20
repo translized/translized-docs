@@ -76,6 +76,7 @@ const sidebars = {
       label: 'CLI',
       items: [
         'cli/basics',
+        'cli/configuration',
         {
           type: 'category',
           label: 'Instalation',
