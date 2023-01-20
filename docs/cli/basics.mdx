@@ -66,11 +66,10 @@ You can add additional download options and setup workflow per your needs:
 - transform placeholders on download so you can share one project for iOS and android
 - replace empty translations with primary language translations or with pseudolocalized strings
 
-You can pass additional options for upload command directly in terminal so you can have flexibility each time you upload:
+Set additional options for upload and download directly in configuration file:
 
-- override existing translations
-- tag all new keys
-- tag all updated keys
+- tags (specify which tags to download or how to tag new or updated keys on upload)
+- update_translation (specify should upload update existing translations)
 
 File example:
 
@@ -80,13 +79,12 @@ File example:
   :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
   :project_id: zAhfwMRi7f
   :download:
-    :path: './<locale_code>.lproj/Localizable.strings'
+  - :path: './<locale_code>.lproj/Localizable.strings'
     :file_format: strings
     options:
       transform_placeholders_iOS_android: true
       replace_empty:
         :primary_translations: true
   :upload:
-    :path: './en.lproj/Localizable.strings'
-    :language_code: en
+  - :path: './<locale_code>.lproj/Localizable.strings'
 ```

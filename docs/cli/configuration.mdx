@@ -1,0 +1,135 @@
+---
+sidebar_position: 2
+tags:
+  - cli
+  - configuration
+  - configuration file
+---
+
+# Configuration file
+
+After runing `translized init` command, **.translized.yml** file will be created.
+Setup preferences will be stored here and later you can change it directly or by runing the command again.
+
+You can add additional download options and setup workflow per your needs:
+
+- transform placeholders on download so you can share one project for iOS and android
+- replace empty translations with primary language translations or with pseudolocalized strings
+
+Set additional options for upload and download directly in configuration file:
+
+- tags: Specify which tags to download or how to tag new or updated keys on upload. Provide as comma separated string
+- update_translations (specify should upload update existing translations)
+
+File example with explanations:
+
+```yml
+---
+:translized:
+  :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
+  :project_id: zAhfwMRi7f
+  :download:
+  - :path: './<locale_code>.lproj/Localizable.strings' #Path to the download location, starting from the location of the configuration file. Use placeholder <locale_code> in the path or file-name to dinamically download all languages
+    :file_format: strings #File format
+    :tags: tag_1, tag_2 #If you want to download only keys with specific tags provide list of tags separated by comma here.
+    options:
+      transform_placeholders_iOS_android: true #iOS/Android only. Placeholder will be converted to platform specific format.
+      replace_empty:
+        :primary_translations: true #Replaces empty translations with the primary translations (use with care if you want to update_translations on each upload)
+  :upload:
+  - :path: './<locale_code>.lproj/Localizable.strings' #Path to the upload location, starting from the location of the configuration file. Use placeholder <locale_code> in the path or file-name to dinamically upload all languages
+    :update_translations: true #Indicates whether existing translations should be updated with the file content.
+    :tags:
+      :new_keys: new_1, new_2 #List of tags separated by comma to be associated with the new keys contained in the upload.
+      :updated_keys: updated_1, updated_2 #List of tags separated by comma to be associated with the updated keys contained in the upload.
+```
+
+:::info
+If you want to upload only one file you can specify exact location in the upload:path:.
+However, you will need to provide language_code bellow. Example bellow.
+:::
+```yml
+:upload:
+- :path: './en.lproj/Localizable.strings'
+  :language_code: en
+```
+
+## Multiple file paths
+
+You can specify multiple file paths for download and upload if needed.
+
+### Tags and multiple files
+
+You can use tags to group keys into different locations when you want more customizable solution.
+
+```yml
+---
+:translized:
+  :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
+  :project_id: zAhfwMRi7f
+  :download:
+  - :path: "./module_1/<locale_code>.json"
+    :file_format: json
+    :tags: module_1
+  - :path: "./module_2/<locale_code>.json"
+    :file_format: json
+    :tags: module_2
+  - :path: "./module_3/<locale_code>.json"
+    :file_format: json
+    :tags: module_3
+  :upload:
+  - :path: "./module_1/<locale_code>.json"
+    :tags: module_1
+  - :path: "./module_2/<locale_code>.json"
+    :tags: module_2
+  - :path: "./module_3/<locale_code>.json"
+    :tags: module_3
+```
+
+### iOS strings and stringsdict download
+
+For iOS plurals are specified in separate file with extension .stringsdict and you can specify download and upload with two paths as shown in example:
+
+```yml
+---
+:translized:
+  :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
+  :project_id: zAhfwMRi7f
+  :download:
+  - :path: './<locale_code>.lproj/Localizable.strings'
+    :file_format: strings
+    options:
+      transform_placeholders_iOS_android: true
+  - :path: './<locale_code>.lproj/Localizable.stringsdict'
+    :file_format: stringsdict
+    options:
+      transform_placeholders_iOS_android: true
+  :upload:
+  - :path: './<locale_code>.lproj/Localizable.strings'
+  - :path: './<locale_code>.lproj/Localizable.stringsdict'
+```
+
+### Android setup
+
+Android base language filepath doesn't contain <locale_code> so for uploading all files, base language filepath should be provided.
+Download is handled automatically.
+
+```yml
+---
+:translized:
+  :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
+  :project_id: zAhfwMRi7f
+  :download:
+  - :path: "./values-<locale_code>/strings.xml"
+    :file_format: xml
+    options:
+      transform_placeholders_iOS_android: true
+  :upload:
+  - :path: "./values/strings.xml"
+    :language_code: en
+  - :path: "./values-<locale_code>/strings.xml"
+```
+
+
+
+

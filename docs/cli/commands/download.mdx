@@ -68,15 +68,14 @@ File example for replace empty with primary translation:
   :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
   :project_id: zAhfwMRi7f
   :download:
-    :path: './<locale_code>.lproj/Localizable.strings'
+  - :path: './<locale_code>.lproj/Localizable.strings'
     :file_format: strings
     options:
       transform_placeholders_iOS_android: true
       replace_empty:
         :primary_translations: true
   :upload:
-    :path: './en.lproj/Localizable.strings'
-    :language_code: en
+  - :path: './<locale_code>.lproj/Localizable.strings'
 ```
 
 File example for replace empty with pseudolocalization:
@@ -87,7 +86,7 @@ File example for replace empty with pseudolocalization:
   :access_token: 610402a6-5dc3-46aa-bc3b-19a8b29288es
   :project_id: zAhfwMRi7f
   :download:
-    :path: './<locale_code>.lproj/Localizable.strings'
+  - :path: './<locale_code>.lproj/Localizable.strings'
     :file_format: strings
     options:
       transform_placeholders_iOS_android: true
@@ -95,6 +94,5 @@ File example for replace empty with pseudolocalization:
         :pseudolocalization: true
         :increase_percentage: 55
   :upload:
-    :path: './en.lproj/Localizable.strings'
-    :language_code: en
+  - :path: './<locale_code>.lproj/Localizable.strings'
 ```
