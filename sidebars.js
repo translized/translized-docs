@@ -136,6 +136,7 @@ const sidebars = {
     'features/over-the-air',
     'features/screenshots',
     'features/comments',
+    'features/qa-checks',
   ],
   translizedGuides: [
     'guides/getting-started',
