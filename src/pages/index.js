@@ -53,7 +53,7 @@ const Home = () => {
             </Link>
             <Link
               className="button button--outline button--primary button--lg hero-button"
-              to={useBaseUrl('docs/features/strings')}
+              to={useBaseUrl('docs/features/keys')}
             >
               Features
             </Link>
