@@ -2,22 +2,22 @@
 sidebar_position: 4
 tags:
   - api
-  - term
+  - key
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Update Term
+# Update Key
 
-Updates Term.
+Updates Key.
 
 Request type: <span style={{ color: '#167219' }}>_POST_</span>
 
 ### API Endpoint
 
 ```url
-https://api.translized.com/term/update
+https://api.translized.com/key/update
 ```
 
 ### Parameters
@@ -25,10 +25,10 @@ https://api.translized.com/term/update
 | Param        | Type   | Required | Description                                                          |
 | ------------ | ------ | -------- | -------------------------------------------------------------------- |
 | projectId    | String | True     | Id of your project                                                   |
-| termKey      | String | True     | Key of term to update                                                |
+| termKey      | String | True     | Key of key to update                                                 |
 | translation  | String | False    | Translation. If defined languageCode is required                     |
 | languageCode | String | False    | Code of language for translation. If defined translation is required |
-| context      | String | False    | Context of term                                                      |
+| context      | String | False    | Context of key                                                       |
 
 ### Example requests
 
@@ -39,14 +39,14 @@ https://api.translized.com/term/update
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
      -d "{"projectId":"A3KJtLw4mt", "termKey":"Api.test", "translation":"API TEST", "languageCode": "en"}" \
-     https://api.translized.com/term/update
+     https://api.translized.com/key/update
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://api.translized.com/term/update', {
+fetch('https://api.translized.com/key/update', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ fetch('https://api.translized.com/term/update', {
   <TabItem value="js-axios" label="Javascript Axios">
 
 ```js
-const response = await axios.post('https://api.translized.com/term/update', {
+const response = await axios.post('https://api.translized.com/key/update', {
   projectId: 'A3KJtLw4mt',
   termKey: 'Api.test',
   translation: 'API TEST',
@@ -84,7 +84,7 @@ const data = response.result;
 
 - **projectId** can be found inside your project's **_settings_**. (Translized App > Your Project > Settings )
 - List of all supported languages with **languageCode** values can be found in our [Supported Languages](/docs/features/supported-languages) section.
-- Term **context** is not required but it is good way to describe where or how term will be used.
+- Key **context** is not required but it is good way to describe where or how key will be used.
 
 :::
 

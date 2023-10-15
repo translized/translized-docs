@@ -1,0 +1,104 @@
+---
+sidebar_position: 2
+tags:
+  - api
+  - key
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Get Key
+
+Adds key to project.
+
+Request type: <span style={{ color: '#167219' }}>_POST_</span>
+
+### API Endpoint
+
+```url
+https://api.translized.com/key/get
+```
+
+### Parameters
+
+| Param        | Type   | Required | Description                                                                                                                      |
+| ------------ | ------ | -------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| projectId    | String | True     | Id of your project                                                                                                               |
+| termKey      | String | True     | Key of key to add                                                                                                                |
+| languageCode | String | False    | Language code. If defined translation will be returned only for that language. If not defined all key translations are returned. |
+
+### Example requests
+
+<Tabs className="api-tabs">
+<TabItem value="cURL" label="cURL">
+
+```curl
+curl -X POST -H "Content-Type: application/json" \
+     -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
+     -d "{"projectId":"A3KJtLw4mt", "termKey":"Api.test"}" \
+     https://api.translized.com/key/get
+```
+
+</TabItem>
+<TabItem value="js-fetch" label="Javascript Fetch">
+
+```js
+fetch('https://api.translized.com/key/get', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'api-token': '42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6',
+  },
+  body: JSON.stringify({
+    projectId: 'A3KJtLw4mt',
+    termKey: 'Api.test',
+  }),
+})
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err));
+```
+
+  </TabItem>
+  <TabItem value="js-axios" label="Javascript Axios">
+
+```js
+const response = await axios.post('https://api.translized.com/key/get', {
+  projectId: 'A3KJtLw4mt',
+  termKey: 'Api.test',
+});
+const data = response.result;
+```
+
+  </TabItem>
+</Tabs>
+
+:::info
+
+- **projectId** can be found inside your project's **_settings_**. (Translized App > Your Project > Settings )
+
+:::
+
+### Example response
+
+```js
+{
+  "result": {
+    "objectId": "DxBKTxakAO",
+    "key": "Api.test",
+    "projectId": "A3KJtLw4mt",
+    "value": [
+      {
+        "code": "en",
+        "translation": "Api test (en)"
+      },
+      {
+        "code": "es",
+        "translation": "Api test (es)"
+      }
+    ],
+    "createdAt": "2022-08-03T18:18:13.098Z"
+  }
+}
+```

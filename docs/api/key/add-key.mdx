@@ -1,23 +1,23 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 tags:
   - api
-  - term
+  - key
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Terms List
+# Add Key
 
-Returns list of all terms in project.
+Adds key to project.
 
 Request type: <span style={{ color: '#167219' }}>_POST_</span>
 
 ### API Endpoint
 
 ```url
-https://api.translized.com/term/list
+https://api.translized.com/key/add
 ```
 
 ### Parameters
@@ -25,6 +25,8 @@ https://api.translized.com/term/list
 | Param     | Type   | Required | Description        |
 | --------- | ------ | -------- | ------------------ |
 | projectId | String | True     | Id of your project |
+| termKey   | String | True     | Key of key to add  |
+| context   | String | False    | Context of key     |
 
 ### Example requests
 
@@ -34,15 +36,15 @@ https://api.translized.com/term/list
 ```curl
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
-     -d "{"projectId":"A3KJtLw4mt"}" \
-     https://api.translized.com/term/list
+     -d "{"projectId":"A3KJtLw4mt", "termKey":"Api.test"}" \
+     https://api.translized.com/key/add
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://api.translized.com/term/list', {
+fetch('https://api.translized.com/key/add', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -50,6 +52,7 @@ fetch('https://api.translized.com/term/list', {
   },
   body: JSON.stringify({
     projectId: 'A3KJtLw4mt',
+    termKey: 'Api.test',
   }),
 })
   .then((res) => res.json())
@@ -61,12 +64,10 @@ fetch('https://api.translized.com/term/list', {
   <TabItem value="js-axios" label="Javascript Axios">
 
 ```js
-const response = await axios.post(
-  'https://api.translized.com/term/list',
-  {
-    projectId: 'A3KJtLw4mt',
-  }
-);
+const response = await axios.post('https://api.translized.com/key/add', {
+  projectId: 'A3KJtLw4mt',
+  termKey: 'Api.test',
+});
 const data = response.result;
 ```
 
@@ -83,11 +84,12 @@ const data = response.result;
 
 ```js
 {
-  "result": [
-    "Registration.title",
-    "Registration.acceptTerms",
-    "Registration.and",
-    "Registration.terms"
-  ]
+  "result": {
+    "objectId": "oNN342JCu0",
+    "projectId": "A3KJtLw4mt",
+    "key": "Api.test",
+    "value": [],
+    "createdAt": "2021-09-08T14:02:44.495Z"
+  }
 }
 ```

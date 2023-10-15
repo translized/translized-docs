@@ -1,32 +1,31 @@
 ---
-sidebar_position: 2
+sidebar_position: 5
 tags:
   - api
-  - term
+  - key
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Get Term
+# Delete Key
 
-Adds term to project.
+Deletes Key.
 
 Request type: <span style={{ color: '#167219' }}>_POST_</span>
 
 ### API Endpoint
 
 ```url
-https://api.translized.com/term/get
+https://api.translized.com/key/delete
 ```
 
 ### Parameters
 
-| Param     | Type   | Required | Description        |
-| --------- | ------ | -------- | ------------------ |
-| projectId | String | True     | Id of your project |
-| termKey   | String | True     | Key of term to add |
-| languageCode | String | False    | Language code. If defined translation will be returned only for that language. If not defined all term translations are returned. |
+| Param     | Type   | Required | Description          |
+| --------- | ------ | -------- | -------------------- |
+| projectId | String | True     | Id of your project   |
+| termKey   | String | True     | Key of key to delete |
 
 ### Example requests
 
@@ -37,14 +36,14 @@ https://api.translized.com/term/get
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
      -d "{"projectId":"A3KJtLw4mt", "termKey":"Api.test"}" \
-     https://api.translized.com/term/get
+     https://api.translized.com/key/delete
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://api.translized.com/term/get', {
+fetch('https://api.translized.com/key/delete', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -55,22 +54,19 @@ fetch('https://api.translized.com/term/get', {
     termKey: 'Api.test',
   }),
 })
-  .then((res) => res.json())
+  .then((response) => response.json())
   .then((data) => console.log(data))
-  .catch((err) => console.log(err));
+  .catch((error) => console.error(error));
 ```
 
   </TabItem>
   <TabItem value="js-axios" label="Javascript Axios">
 
 ```js
-const response = await axios.post(
-  'https://api.translized.com/term/get',
-  {
-    projectId: 'A3KJtLw4mt',
-    termKey: 'Api.test',
-  }
-);
+const response = await axios.post('https://api.translized.com/key/delete', {
+  projectId: 'A3KJtLw4mt',
+  termKey: 'Api.test',
+});
 const data = response.result;
 ```
 
@@ -88,20 +84,7 @@ const data = response.result;
 ```js
 {
   "result": {
-    "objectId": "DxBKTxakAO",
-    "key": "Api.test",
-    "projectId": "A3KJtLw4mt",
-    "value": [
-      {
-        "code": "en",
-        "translation": "Api test (en)"
-      },
-      {
-        "code": "es",
-        "translation": "Api test (es)"
-      }
-    ],
-    "createdAt": "2022-08-03T18:18:13.098Z"
+    "success": true
   }
 }
 ```

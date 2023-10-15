@@ -66,7 +66,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'features/strings',
+            docId: 'features/keys',
             position: 'left',
             label: 'Features',
           },
@@ -88,7 +88,7 @@ const config = {
               },
               {
                 label: 'Features',
-                to: 'docs/features/strings',
+                to: 'docs/features/keys',
               },
             ],
           },

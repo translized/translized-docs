@@ -1,23 +1,23 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 tags:
   - api
-  - term
+  - key
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add Term
+# Keys List
 
-Adds term to project.
+Returns list of all keys in project.
 
 Request type: <span style={{ color: '#167219' }}>_POST_</span>
 
 ### API Endpoint
 
 ```url
-https://api.translized.com/term/add
+https://api.translized.com/key/list
 ```
 
 ### Parameters
@@ -25,8 +25,6 @@ https://api.translized.com/term/add
 | Param     | Type   | Required | Description        |
 | --------- | ------ | -------- | ------------------ |
 | projectId | String | True     | Id of your project |
-| termKey   | String | True     | Key of term to add |
-| context   | String | False    | Context of term    |
 
 ### Example requests
 
@@ -36,15 +34,15 @@ https://api.translized.com/term/add
 ```curl
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
-     -d "{"projectId":"A3KJtLw4mt", "termKey":"Api.test"}" \
-     https://api.translized.com/term/add
+     -d "{"projectId":"A3KJtLw4mt"}" \
+     https://api.translized.com/key/list
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://api.translized.com/term/add', {
+fetch('https://api.translized.com/key/list', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -52,7 +50,6 @@ fetch('https://api.translized.com/term/add', {
   },
   body: JSON.stringify({
     projectId: 'A3KJtLw4mt',
-    termKey: 'Api.test',
   }),
 })
   .then((res) => res.json())
@@ -64,13 +61,9 @@ fetch('https://api.translized.com/term/add', {
   <TabItem value="js-axios" label="Javascript Axios">
 
 ```js
-const response = await axios.post(
-  'https://api.translized.com/term/add',
-  {
-    projectId: 'A3KJtLw4mt',
-    termKey: 'Api.test',
-  }
-);
+const response = await axios.post('https://api.translized.com/key/list', {
+  projectId: 'A3KJtLw4mt',
+});
 const data = response.result;
 ```
 
@@ -87,12 +80,11 @@ const data = response.result;
 
 ```js
 {
-  "result": {
-    "objectId": "oNN342JCu0",
-    "projectId": "A3KJtLw4mt",
-    "key": "Api.test",
-    "value": [],
-    "createdAt": "2021-09-08T14:02:44.495Z"
-  }
+  "result": [
+    "Registration.title",
+    "Registration.acceptTerms",
+    "Registration.and",
+    "Registration.keys"
+  ]
 }
 ```

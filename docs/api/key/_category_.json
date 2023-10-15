@@ -1,8 +1,8 @@
 {
-  "label": "Term",
+  "label": "Key",
   "position": 4,
   "link": {
     "type": "generated-index",
-    "description": "Term API documentation"
+    "description": "Key API documentation"
   }
 }
