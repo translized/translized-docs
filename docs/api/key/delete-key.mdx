@@ -17,7 +17,7 @@ Request type: <span style={{ color: '#167219' }}>_POST_</span>
 ### API Endpoint
 
 ```url
-https://api.translized.com/key/delete
+https://api.translized.com/term/delete
 ```
 
 ### Parameters
@@ -36,14 +36,14 @@ https://api.translized.com/key/delete
 curl -X POST -H "Content-Type: application/json" \
      -H "api-token: 42cf5fec-a74c-4a53-8ebc-86a4e52b7ce6" \
      -d "{"projectId":"A3KJtLw4mt", "termKey":"Api.test"}" \
-     https://api.translized.com/key/delete
+     https://api.translized.com/term/delete
 ```
 
 </TabItem>
 <TabItem value="js-fetch" label="Javascript Fetch">
 
 ```js
-fetch('https://api.translized.com/key/delete', {
+fetch('https://api.translized.com/term/delete', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ fetch('https://api.translized.com/key/delete', {
   <TabItem value="js-axios" label="Javascript Axios">
 
 ```js
-const response = await axios.post('https://api.translized.com/key/delete', {
+const response = await axios.post('https://api.translized.com/term/delete', {
   projectId: 'A3KJtLw4mt',
   termKey: 'Api.test',
 });
