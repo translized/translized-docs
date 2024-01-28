@@ -3,18 +3,18 @@
 Automatically upload and download localizable files to the [Translized](https://www.translized.com/) translation management platform.
 
 :::info
-Configuration file **.translized.yml** should exist in a root directory.
+Configuration file **.translized.yml** should exist in a root directory of your project.
 More details about file and how to create it can be found [here](https://docs.translized.com/docs/cli/configuration).
 :::
 
-If you don't have it already, create **.gitlab-ci.yml** file.
+If you don't have it already, create **.gitlab-ci.yml** file in the root of your project.
 
 # Translized upload
 
 Upload localizable files to the [Translized](https://www.translized.com/) translation management platform. 
 For detailed documentation of Translized CLI, please [visit the documentation](https://docs.translized.com/docs/cli/basics/).
 
-## Example usage
+### Example usage
 
     default:
       image: docker:19.03.12
@@ -31,7 +31,7 @@ This job will upload your localization files to Translized.
 Download your localization files from [Translized](https://www.translized.com/) translation management platform. 
 For detailed documentation of Translized CLI, please [visit the documentation](https://docs.translized.com/docs/cli/basics/).
 
-## Example usage
+### Example usage
 
     default:
       image: docker:19.03.12
@@ -41,7 +41,8 @@ For detailed documentation of Translized CLI, please [visit the documentation](h
       script:
       - docker run --rm -v $(pwd):/app/workspace translized/cli:v1.0 download
 
-This job will download your latest localization files from Translized.
+This job will download your latest localization files from Translized. 
+Of course, as files are only downloaded during the CI/CD pipeline they will be lost if you don't use them to create PR or to produce release build, depending upon your needs.
 
 ## Support
 
