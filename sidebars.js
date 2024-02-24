@@ -117,7 +117,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'App Integrations',
-      items: ['integrations/webhooks', 'integrations/slack', 'integrations/figma', 'integrations/github', 'integrations/gitlab'],
+      items: ['integrations/webhooks', 'integrations/slack', 'integrations/figma', 'integrations/github', 'integrations/gitlab', 'integrations/bitrise'],
       collapsed: true,
     },
   ],
