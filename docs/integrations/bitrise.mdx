@@ -1,0 +1,38 @@
+# Bitrise Step
+
+Automatically download localizable files from [Translized](https://www.translized.com/) translation management platform.
+
+:::info
+Configuration file **.translized.yml** should exist in a root directory of your project.
+More details about file and how to create it can be found [here](https://docs.translized.com/docs/cli/configuration).
+:::
+
+# Translized step
+
+[Translized](https://www.translized.com/) is a tool designed to assist in automating translations for mobile and web apps. It can be integrated into Bitrise, a continuous integration and delivery platform for mobile apps, to streamline the translation process.
+For detailed documentation of Translized CLI, please [visit the documentation](https://docs.translized.com/docs/cli/basics/).
+Below are the steps to integrate Translized into your Bitrise workflow:
+
+### Step 1: Set up Your Bitrise Workflow
+1. Log in to Bitrise: Go to [Bitrise](https://bitrise.io/) and log in to your account.
+2. Select Your Project: From the dashboard, select the project you want to add Translized to.
+3. Select Workflow: Choose the workflow where you want to integrate Translized. Typically, this would be the "iOS" or "Android" workflow, but you can choose any custom workflow you have.
+4. Add a New Step: In the workflow editor, click on the "+" icon to add a new step.
+
+### Step 2: Add the Translized Step
+1. Search for Translized Step: In the step library, search for "Translized".
+2. Add Step: Click on the "Translized" step to add it to your workflow.
+
+![/docs/integrations/bitrise/bitris_search_translized.png](/docs/integrations/bitrise/bitrise_search_translized.png)
+
+### Step 3: Run Your Workflow
+1. Commit and Push: Commit your changes to your repository and push them to trigger the workflow.
+2. Monitor Progress: Go to the "Builds" tab in Bitrise and monitor the progress of your workflow. The Translized step will automatically download and save your translated files to the specified directory.
+
+![/docs/integrations/bitrise/bitrise_run_workflow.png](/docs/integrations/bitrise/bitrise_run_workflow.png)
+
+That's it! You have successfully integrated Translized into your Bitrise workflow and automated the translation process for your mobile app.
+
+## Support
+
+Contact us through email: **info@translized.com**
