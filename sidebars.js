@@ -27,7 +27,6 @@ const sidebars = {
   ],
    */
   translizedDocs: [
-    'getting-started',
     {
       type: 'category',
       label: 'API',
@@ -138,14 +137,6 @@ const sidebars = {
     'features/comments',
     'features/qa-checks',
   ],
-  translizedGuides: [
-    'guides/getting-started',
-    'guides/user-management',
-    'guides/importing-localization-keys',
-    'guides/translate-keys',
-    'guides/onboarding-guide-for-managers',
-    'guides/onboarding-guide-for-translators',
-  ]
 };
 
 module.exports = sidebars;
