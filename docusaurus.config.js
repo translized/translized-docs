@@ -54,13 +54,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'guides/getting-started',
-            position: 'left',
-            label: 'Guides',
-          },
-          {
-            type: 'doc',
-            docId: 'getting-started',
+            docId: 'api/authentication',
             position: 'left',
             label: 'Docs',
           },
@@ -84,7 +78,7 @@ const config = {
             items: [
               {
                 label: 'Docs',
-                to: 'docs/getting-started',
+                to: 'docs/api/authentication',
               },
               {
                 label: 'Features',

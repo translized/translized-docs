@@ -27,7 +27,6 @@ const sidebars = {
   ],
    */
   translizedDocs: [
-    'getting-started',
     {
       type: 'category',
       label: 'API',
@@ -117,7 +116,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'App Integrations',
-      items: ['integrations/webhooks', 'integrations/slack', 'integrations/figma', 'integrations/github', 'integrations/gitlab'],
+      items: ['integrations/webhooks', 'integrations/slack', 'integrations/figma', 'integrations/github', 'integrations/gitlab', 'integrations/bitrise'],
       collapsed: true,
     },
   ],
@@ -138,14 +137,6 @@ const sidebars = {
     'features/comments',
     'features/qa-checks',
   ],
-  translizedGuides: [
-    'guides/getting-started',
-    'guides/user-management',
-    'guides/importing-localization-keys',
-    'guides/translate-keys',
-    'guides/onboarding-guide-for-managers',
-    'guides/onboarding-guide-for-translators',
-  ]
 };
 
 module.exports = sidebars;
